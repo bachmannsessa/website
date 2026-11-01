@@ -13,13 +13,27 @@
   <fieldset class="order__group">
     <legend>{{ index .titel $lang }}</legend>
     {{- range .weine }}
+    {{- $page := partial "page-by-key.html" (printf "die-weine/%s" .id) }}
+    {{- $img := .bild }}{{ with $page }}{{ $img = (partial "page-image.html" .).src }}{{ end }}
     <div class="order__row{{ if .ausverkauft }} is-soldout{{ end }}">
-      <div class="order__wine"><strong>{{ .name }}</strong><span>{{ .beschreibung }}</span></div>
+      <div class="order__thumb">
+        {{- if $img }}{{ partial "picture.html" (dict "src" $img "sizes" "64px" "widths" (slice 160 320) "position" "50% 62%" "alt" .name) }}
+        {{- else }}<span aria-hidden="true">{{ substr .name 0 1 }}</span>{{ end }}
+      </div>
+      <div class="order__wine">
+        <strong>{{ with $page }}<a href="{{ .RelPermalink }}">{{ end }}{{ .name }}{{ with $page }}</a>{{ end }}</strong>
+        <span>{{ .beschreibung }}</span>
+      </div>
       <div class="order__price">CHF {{ lang.FormatNumber 2 .preis }} <small>/ {{ .inhalt }}</small></div>
       <div class="order__qty">
         {{- if .ausverkauft }}<em>{{ T "soldOut" }}</em>{{ else }}
-        <input type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="0" aria-label="{{ .name }} – {{ T "quantity" }}"
-               data-id="{{ .id }}" data-wine="{{ .name }}" data-price="{{ .preis }}" data-volume="{{ .inhalt }}">
+        <div class="qty">
+          <button type="button" class="qty__btn" data-step="-1" aria-label="{{ .name }}: {{ T "less" }}">−</button>
+          <input type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="0" aria-label="{{ .name }} – {{ T "quantity" }}"
+                 data-id="{{ .id }}" data-wine="{{ .name }}" data-price="{{ .preis }}" data-volume="{{ .inhalt }}">
+          <button type="button" class="qty__btn" data-step="1" aria-label="{{ .name }}: {{ T "more" }}">+</button>
+        </div>
+        <button type="button" class="qty__box" data-step="6">{{ T "addBox" }}</button>
         {{- end }}
       </div>
     </div>

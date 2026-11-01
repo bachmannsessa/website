@@ -2,6 +2,7 @@
 # - preis in CHF
 # - einen Wein vorübergehend ausblenden: "ausverkauft: true" setzen
 # - id nicht ändern (erscheint so in der Bestell-E-Mail)
+# - bild: optional, nur für Produkte ohne eigene Weinseite (z.B. Grappa), Pfad wie "/images/…"
 
 versand_pro_karton: 5   # CHF Portoanteil (Schweiz) pro 6er-Karton
 mwst: "8.1%"

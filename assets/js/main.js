@@ -106,6 +106,14 @@ document.querySelectorAll('form[data-order]').forEach((form) => {
     cart.set(next);
     update();
   });
+  // − / + / "+ 1 Karton"
+  form.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-step]');
+    if (!b) return;
+    const input = b.closest('.order__row').querySelector('input[data-id]');
+    input.value = Math.max(0, (parseInt(input.value, 10) || 0) + parseInt(b.dataset.step, 10)) || '';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  });
   form.addEventListener('order-sent', () => { cart.set({}); inputs.forEach((i) => { i.value = ''; }); update(); });
   update();
 });
