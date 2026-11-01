@@ -1,0 +1,18 @@
+<article class="post">
+  <header class="post__head">
+    <h1>{{ .Title }}</h1>
+    <p class="lead post__lead">{{ .Description | default (T "contactLead") }}</p>
+  </header>
+  <div class="contact">
+    <div class="contact__form">{{ .Content }}</div>
+    <aside class="contact__info">
+      <address>
+        <strong>{{ site.Title }}</strong><br>
+        {{ site.Params.owner }}<br>
+        {{ site.Params.address | replaceRE " · " "<br>" | safeHTML }}
+      </address>
+      {{- with site.Params.mapLink }}<p><a class="btn btn--ghost" href="{{ . }}" target="_blank" rel="noopener">{{ T "route" }}</a></p>{{ end }}
+      {{- with site.Params.mapEmbed }}<iframe class="contact__map" src="{{ . }}" title="{{ T "route" }}" loading="lazy"></iframe>{{ end }}
+    </aside>
+  </div>
+</article>

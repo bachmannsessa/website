@@ -1,19 +1,23 @@
 {{ define "main" }}
 {{- if strings.HasPrefix .TranslationKey "die-weine/" }}
 {{ partial "wine-page.html" . }}
+{{- else if eq .TranslationKey "kontakt" }}
+{{ partial "contact-page.html" . }}
 {{- else }}
 {{- $i := partial "page-image.html" . }}
 {{- $parent := .Parent }}
-<article class="post">
+<article class="post{{ if .Params.wide }} post--wide{{ end }}">
   <header class="post__head">
     {{- if and $parent (not $parent.IsHome) }}
     <a class="eyebrow post__back" href="{{ $parent.RelPermalink }}">← {{ $parent.Title }}</a>
     {{- end }}
     <h1>{{ .Title }}</h1>
   </header>
+  {{- if ne .Params.cover false }}
   <figure class="post__cover">
     {{ partial "picture.html" (dict "src" $i.src "position" $i.position "sizes" "(max-width: 1140px) 100vw, 1100px" "loading" "eager" "alt" .Title) }}
   </figure>
+  {{- end }}
   <div class="post__body prose">{{ .Content }}</div>
 </article>
 
