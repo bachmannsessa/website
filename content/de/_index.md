@@ -14,5 +14,5 @@ facts:
 # Zitat über dem Bild "Geschichte"
 quote: "Doch der Mensch lebt nicht vom Brot allein."
 # Abschnitt "Besuch & Kontakt"
-visit: "Besuche im Keller sind herzlich willkommen. Am besten melden Sie sich kurz vorher an – dann stelle ich Ihnen meine Weine gerne vor."
+visit: "Besuche im Keller sind herzlich willkommen. Am besten melden Sie sich vorher an – dann stelle ich Ihnen meine Weine gerne vor."
 ---
