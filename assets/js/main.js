@@ -41,24 +41,72 @@ function orderSummary(form) {
   });
   return { lines, total, bottles };
 }
+// Warenkorb ("Bestellung"): { weinId: Anzahl } im Browser gespeichert (localStorage)
+const cart = {
+  key: 'bsv-cart',
+  get() { try { return JSON.parse(localStorage.getItem(this.key)) || {}; } catch (_) { return {}; } },
+  set(c) {
+    for (const k of Object.keys(c)) if (!(c[k] > 0)) delete c[k];
+    try { localStorage.setItem(this.key, JSON.stringify(c)); } catch (_) {}
+    renderCartCount();
+  },
+  add(id, n = 1) { const c = this.get(); c[id] = (c[id] || 0) + n; this.set(c); },
+};
+function renderCartCount() {
+  const n = Object.values(cart.get()).reduce((a, b) => a + b, 0);
+  document.querySelectorAll('[data-cart-count]').forEach((el) => {
+    el.textContent = n;
+    el.closest('.nav__cart')?.classList.toggle('has-items', n > 0);
+  });
+}
+renderCartCount();
+window.addEventListener('storage', (e) => { if (e.key === cart.key) renderCartCount(); });
+
+// kurze Bestätigung unten am Bildschirm
+const toastEl = document.getElementById('toast');
+let toastTimer;
+function toast(msg) {
+  if (!toastEl) return;
+  toastEl.querySelector('.toast__text').textContent = msg;
+  toastEl.hidden = false;
+  requestAnimationFrame(() => toastEl.classList.add('is-visible'));
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toastEl.classList.remove('is-visible'); setTimeout(() => { toastEl.hidden = true; }, 300); }, 4000);
+}
+
+// "Zur Bestellung hinzufügen"
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-add]');
+  if (!b) return;
+  e.preventDefault();
+  cart.add(b.dataset.add);
+  b.classList.add('is-added');
+  setTimeout(() => b.classList.remove('is-added'), 1200);
+  toast(b.dataset.msg);
+});
+
+// Bestellseite: Mengen aus dem Warenkorb übernehmen und synchron halten
 document.querySelectorAll('form[data-order]').forEach((form) => {
+  const inputs = [...form.querySelectorAll('input[data-id]')];
+  // ?wein=<id> (ältere Links): Wein hinzufügen, falls noch nicht im Warenkorb
+  const pre = new URLSearchParams(location.search).get('wein');
+  if (pre && inputs.some((i) => i.dataset.id === pre) && !cart.get()[pre]) cart.add(pre);
+  const c = cart.get();
+  inputs.forEach((i) => { i.value = c[i.dataset.id] || ''; });
+
   const update = () => {
     const s = orderSummary(form);
     form.querySelector('[data-total]').textContent = chf(s.total);
     form.querySelector('[data-bottles]').textContent = s.bottles;
+    form.querySelector('[data-cart-empty]')?.toggleAttribute('hidden', s.bottles > 0);
   };
-  form.addEventListener('input', update);
-  // ?wein=<id> (Button "Bestellen" auf der Weinseite): Wein mit 1 Flasche vorwählen
-  const pre = new URLSearchParams(location.search).get('wein');
-  const input = pre && form.querySelector(`input[data-id="${CSS.escape(pre)}"]`);
-  if (input) {
-    if (!input.value) input.value = 1;
-    const row = input.closest('.order__row');
-    row.classList.add('is-highlight');
-    setTimeout(() => row.classList.remove('is-highlight'), 2500);
-    row.scrollIntoView({ block: 'center' });
-    input.focus({ preventScroll: true });
-  }
+  form.addEventListener('input', () => {
+    const next = {};
+    inputs.forEach((i) => { const q = Math.max(0, parseInt(i.value, 10) || 0); if (q) next[i.dataset.id] = q; });
+    cart.set(next);
+    update();
+  });
+  form.addEventListener('order-sent', () => { cart.set({}); inputs.forEach((i) => { i.value = ''; }); update(); });
   update();
 });
 
@@ -81,7 +129,7 @@ document.querySelectorAll('form[data-ajax]').forEach((form) => {
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json.success === false) throw new Error(json.message || res.status);
       form.reset();
-      form.dispatchEvent(new Event('input'));
+      form.dispatchEvent(new Event(form.dataset.order !== undefined ? 'order-sent' : 'input'));
       show(form.dataset.msgSent, true);
     } catch (err) {
       console.error(err);

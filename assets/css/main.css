@@ -446,3 +446,45 @@ section ~ .post__body, .hero + .post__body { padding-top: clamp(40px, 6vw, 72px)
 .contact__info address { font-style: normal; line-height: 1.8; margin: 0 0 20px; }
 .contact__map { display: block; width: 100%; height: 360px; border: 0; border-radius: var(--radius); margin-top: 24px; background: #ddd; }
 @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+
+/* =================================================================
+   Order basket ("Zur Bestellung hinzufügen")
+   ================================================================= */
+.nav__cart { order: 2; position: relative; display: grid; place-items: center; width: 44px; height: 44px; margin-left: 4px; color: inherit; border-radius: 8px; }
+.nav__cart:hover { background: rgb(127 127 127 / .15); }
+.nav__toggle { order: 3; }
+.nav__cart-count { position: absolute; top: 3px; right: 1px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--accent-2); color: #fff; font: 700 .68rem/18px var(--sans); text-align: center; transform: scale(0); transition: transform .2s; }
+.nav__cart.has-items .nav__cart-count { transform: scale(1); }
+
+.btn--small { padding: .6em 1.1em; font-size: .72rem; }
+.add-to-cart { position: relative; }
+.add-to-cart.is-added { background: #2f6b3a; border-color: #2f6b3a; }
+.add-to-cart.is-added::after { content: " ✓"; }
+
+.toast { position: fixed; z-index: 90; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; transition: opacity .25s, transform .25s;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; max-width: min(560px, calc(100vw - 32px)); padding: 14px 20px; border-radius: 12px; background: #1d1b19; color: #fff; box-shadow: 0 10px 30px rgb(0 0 0 / .25); font-size: .92rem; }
+.toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.toast__link { color: #fff; font-weight: 700; white-space: nowrap; }
+
+/* wine cards with footer (price + button) */
+.wine { position: relative; }
+.wine__link { display: flex; flex-direction: column; flex: 1; color: inherit; text-decoration: none; }
+.wine__foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 0 18px 18px; }
+.wine__foot .wine__price { margin: 0; }
+.sec--tint .wine { background: var(--surface); box-shadow: var(--shadow); }
+.sec--tint .wine:hover { background: var(--surface); }
+.sec--tint .wine h3, .sec--tint .wine__price { color: var(--ink); }
+.sec--tint .wine__desc, .sec--tint .wine__price small { color: var(--muted); }
+.sec--dark .add-to-cart { background: #fff; color: var(--ink); border-color: #fff; }
+.sec--dark .add-to-cart.is-added { background: #2f6b3a; color: #fff; border-color: #2f6b3a; }
+.wine-hero__checkout { font-size: .9rem; }
+.form__hint { padding: 12px 16px; border-radius: 8px; background: #eef1fb; font-size: .95rem; }
+
+/* Geschichte: merged "der Winzer" */
+.story { background: var(--surface); border-top: 1px solid var(--line); padding: clamp(56px, 8vw, 104px) var(--gutter); scroll-margin-top: var(--nav-h); }
+.story__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(240px, 400px) 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.story__img { position: sticky; top: calc(var(--nav-h) + 24px); }
+.story__img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+.story__text h2 { margin-top: 0; font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
+.story__text { font-size: 1.08rem; line-height: 1.8; }
+@media (max-width: 860px) { .story__inner { grid-template-columns: 1fr; } .story__img { position: static; max-width: 420px; } }

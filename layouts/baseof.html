@@ -3,12 +3,16 @@
 <head>
   {{- partial "head.html" . }}
 </head>
-<body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }}{{ if or .IsPage (eq .Section "news") }} no-hero{{ end }}">
+<body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }}{{ if not .IsHome }} no-hero{{ end }}">
   {{- partial "nav.html" . }}
   <main id="main">
     {{- block "main" . }}{{ end }}
   </main>
   {{- partial "footer.html" . }}
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span class="toast__text"></span>
+    {{- with partial "page-by-key.html" "bestellung" }}<a class="toast__link" href="{{ .RelPermalink }}">{{ T "checkoutNow" }} →</a>{{ end }}
+  </div>
   {{- if site.Params.ageGate }}{{ partial "agegate.html" . }}{{ end }}
   {{- with resources.Get "js/main.js" | js.Build (dict "minify" true) | fingerprint }}
   <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>

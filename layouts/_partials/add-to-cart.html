@@ -1,0 +1,2 @@
+{{- /* dict: id, name, class */ -}}
+<button type="button" class="btn add-to-cart {{ .class }}" data-add="{{ .id }}" data-msg="{{ T "addedToCart" (dict "name" .name) }}">{{ T "addToCart" }}</button>

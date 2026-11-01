@@ -8,7 +8,7 @@
       {{- $current := . }}
       {{- range site.Menus.main }}
       {{- $children := slice }}
-      {{- with .Page }}{{ if and .IsSection (ne .Section "news") }}{{ $children = .RegularPages.ByWeight }}{{ end }}{{ end }}
+      {{- with .Page }}{{ if and .IsSection (ne .Section "news") }}{{ $children = where .RegularPages.ByWeight "RelPermalink" "ne" "" }}{{ end }}{{ end }}
       <li class="nav__item{{ if $children }} has-sub{{ end }}{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (and .Page ($current.IsDescendant .Page) (not .Page.IsHome)) }} is-active{{ end }}">
         <a href="{{ .URL }}">{{ .Name }}</a>
         {{- if $children }}
@@ -32,5 +32,12 @@
         {{- end }}
       </li>
     </ul>
+    {{- with partial "page-by-key.html" "bestellung" }}
+    <a class="nav__cart" href="{{ .RelPermalink }}" title="{{ .Title }}">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+      <span class="sr-only">{{ .Title }}</span>
+      <span class="nav__cart-count" data-cart-count>0</span>
+    </a>
+    {{- end }}
   </div>
 </nav>

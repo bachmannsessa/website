@@ -4,6 +4,7 @@
       data-msg-sending="{{ T "sending" }}" data-msg-sent="{{ T "orderSent" }}" data-msg-error="{{ T "sendError" }}"
       data-msg-empty="{{ T "orderEmpty" }}" data-shipping="{{ $d.versand_pro_karton }}">
   {{ partial "form-hidden.html" (dict "subject" (T "orderSubject")) }}
+  <p class="form__hint" data-cart-empty hidden>{{ T "cartEmpty" }}</p>
   <input type="hidden" name="Bestellung" value="">
   <input type="hidden" name="Total" value="">
   <input type="hidden" name="Sprache" value="{{ $lang }}">

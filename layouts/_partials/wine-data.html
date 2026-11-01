@@ -1,0 +1,4 @@
+{{- /* dict id -> wine entry from data/weine.yaml */ -}}
+{{- $m := dict -}}
+{{- range hugo.Data.weine.gruppen }}{{ range .weine }}{{ $m = merge $m (dict .id .) }}{{ end }}{{ end -}}
+{{- return $m -}}

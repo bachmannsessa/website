@@ -27,7 +27,8 @@
           <p class="wine-hero__price">{{ T "soldOut" }}</p>
           {{- else }}
           <p class="wine-hero__price">CHF {{ lang.FormatNumber 2 .preis }} <small>/ {{ .inhalt }}</small></p>
-          {{- with $order }}<a class="btn" href="{{ .RelPermalink }}?wein={{ $id }}">{{ T "order" }}</a>{{ end }}
+          {{ partial "add-to-cart.html" (dict "id" $id "name" $.Title) }}
+          {{- with $order }}<a class="link-arrow wine-hero__checkout" href="{{ .RelPermalink }}">{{ T "checkoutNow" }}</a>{{ end }}
           {{- end }}
         </div>
         {{- end }}

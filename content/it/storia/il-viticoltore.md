@@ -3,6 +3,10 @@ title: "Il Viticoltore"
 date: "2017-06-05T14:12:55+02:00"
 translationKey: "geschichte/der-winzer"
 weight: 1
+# wird auf der Seite "Geschichte" angezeigt, keine eigene Seite
+build:
+  render: never
+  list: local
 ---
 ### Da consulente a viticoltore
 

@@ -1,13 +1,49 @@
 {{ define "main" }}
-{{ partial "hero.html" (dict "page" .) }}
-{{- with .Content }}
-<div class="post__body prose">{{ . }}</div>
-{{- end }}
-{{- with .RegularPages.ByWeight }}
-<section class="sec sec--tint sec--cards">
-  <div class="sec__inner">
-    <div class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</div>
-  </div>
-</section>
+{{- $i := partial "page-image.html" . }}
+{{- $key := .TranslationKey }}
+<article class="post">
+  <header class="post__head">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <figure class="post__cover">
+    {{ partial "picture.html" (dict "src" $i.src "position" $i.position "sizes" "(max-width: 1140px) 100vw, 1100px" "loading" "eager" "alt" .Title) }}
+  </figure>
+  {{- with .Content }}<div class="post__body prose">{{ . }}</div>{{ end }}
+</article>
+
+{{- if eq $key "geschichte" }}
+  {{- /* merged sub pages (e.g. "der Winzer"), shown in full */}}
+  {{- range .RegularPages.ByWeight }}
+  {{- $w := partial "page-image.html" . }}
+  <section class="story" id="{{ cond (eq .TranslationKey "geschichte/der-winzer") "winzer" (.File.ContentBaseName) }}">
+    <div class="story__inner">
+      <div class="story__img">{{ partial "picture.html" (dict "src" $w.src "position" $w.position "sizes" "(max-width: 860px) 100vw, 440px" "alt" .Title) }}</div>
+      <div class="story__text prose">
+        <p class="eyebrow">{{ $.Title }}</p>
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
+{{- else if eq $key "die-weine" }}
+  <section class="sec sec--tint sec--cards" id="weine">
+    <div class="sec__inner">
+      {{ partial "wine-grid.html" . }}
+      {{- with partial "page-by-key.html" "bestellung" }}
+      <div class="sec__cta"><a class="btn btn--large" href="{{ .RelPermalink }}">{{ T "checkoutNow" }} →</a><p class="muted">{{ T "orderHint" }}</p></div>
+      {{- end }}
+    </div>
+  </section>
+
+{{- else }}
+  {{- with where .RegularPages.ByWeight "RelPermalink" "ne" "" }}
+  <section class="sec sec--tint sec--cards">
+    <div class="sec__inner">
+      <div class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</div>
+    </div>
+  </section>
+  {{- end }}
 {{- end }}
 {{ end }}

@@ -4,6 +4,8 @@ date: "2016-01-02T17:49:57+01:00"
 translationKey: "geschichte"
 weight: 2
 image: "/images/2016/01/umgebung.jpg"
+aliases:
+  - "/geschichte/der-winzer/"
 ---
 Kastanie, Rebe, Wasser. Sie prägten und prägen zum Teil immer noch Bild und Identität des Malcantone. Prächtige Kastanienhaine legen Zeugnis davon ab, dass bis in die Mitte des letzten Jahrhunderts Pflege und Nutzung der Kastanie den Menschen hier das Überleben sicherten.
 

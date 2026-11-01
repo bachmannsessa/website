@@ -1,0 +1,22 @@
+{{- /* Grid of wine cards with price + add-to-cart. Argument: the wines section page. */ -}}
+{{- $data := partial "wine-data.html" . }}
+<div class="wines">
+  {{- range .RegularPages.ByWeight }}
+  {{- $d := index $data .File.ContentBaseName }}
+  <div class="wine reveal">
+    <a class="wine__link" href="{{ .RelPermalink }}">
+      <div class="wine__img">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 700px) 70vw, 280px" "widths" (slice 480 960) "position" "50% 55%" "alt" .Title) }}</div>
+      <div class="wine__body">
+        <h3>{{ .Title }}</h3>
+        {{- with $d }}<p class="wine__desc">{{ .beschreibung }}</p>{{ end }}
+      </div>
+    </a>
+    {{- with $d }}
+    <div class="wine__foot">
+      <p class="wine__price">{{ if .ausverkauft }}{{ T "soldOut" }}{{ else }}CHF {{ lang.FormatNumber 2 .preis }} <small>/ {{ .inhalt }}</small>{{ end }}</p>
+      {{- if not .ausverkauft }}{{ partial "add-to-cart.html" (dict "id" .id "name" .name "class" "btn--small") }}{{ end }}
+    </div>
+    {{- end }}
+  </div>
+  {{- end }}
+</div>

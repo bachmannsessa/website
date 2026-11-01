@@ -1,4 +1,6 @@
-{{- /* Returns the page of the current language with the given translationKey (or nil). */ -}}
+{{- /* Returns the page of the current language with the given translationKey (or nil).
+       Also finds pages that are only listed locally (build.list: local), e.g. "der Winzer". */ -}}
 {{- $p := "" -}}
 {{- with where site.Pages "TranslationKey" . }}{{ $p = index . 0 }}{{ end -}}
+{{- if not $p }}{{ $key := . }}{{ range site.Sections }}{{ with where .RegularPages "TranslationKey" $key }}{{ $p = index . 0 }}{{ end }}{{ end }}{{ end -}}
 {{- return $p -}}

@@ -4,6 +4,10 @@ date: "2016-01-02T17:53:05+01:00"
 translationKey: "geschichte/der-winzer"
 weight: 1
 image: "/images/2016/01/beat.png"
+# wird auf der Seite "Geschichte" angezeigt, keine eigene Seite
+build:
+  render: never
+  list: local
 ---
 ### Vom Berater zum Weinbauer
 

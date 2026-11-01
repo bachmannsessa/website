@@ -81,6 +81,11 @@ them by e-mail (free: 250 submissions/month).
 The order form is generated from `data/weine.yaml`; the total is computed in the browser and the
 e-mail contains a readable order summary plus the address fields.
 
+Order basket: "Zur Bestellung hinzufügen" buttons (wine overview, wine pages, start page) store
+`{wineId: quantity}` in the visitor's browser (`localStorage`, key `bsv-cart`). The menu shows the
+bottle count; the order page is pre-filled from the basket and keeps it in sync. After a successful
+"Bestellung abschliessen" the basket is emptied. No server or cookies involved.
+
 ## Deployment
 
 Every push to `main` builds and deploys via `.github/workflows/deploy.yml`.
