@@ -6,9 +6,6 @@ weight: 1
 cover: false
 wide: true
 ---
-Qui è possibile ordinare i vini attualmente in vendita.\
-Il pagamento viene effettuato tramite fattura. In caso di spedizione in Svizzera, verrà addebitata un’affrancatura aggiuntiva di CHF 5.– per ogni confezione da 6.
-
 {{< bestellformular >}}
 
 #### **Termini e condizioni generali**

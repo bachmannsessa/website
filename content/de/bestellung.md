@@ -7,9 +7,6 @@ image: "/images/2021/03/ALLE-FLASCHEN-2048x1152.jpg"
 cover: false
 wide: true
 ---
-Hier können Sie die sich aktuell im Verkauf befindlichen Weine bestellen.\
-Die Bezahlung erfolgt per Rechnung. Bei Versand in die Schweiz wird pro 6er Karton ein zusätzlicher Portoanteil von CHF 5 verrechnet.
-
 {{< bestellformular >}}
 
 #### Allgemeine Geschäftsbedingungen (AGB)
