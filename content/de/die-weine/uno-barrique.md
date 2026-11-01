@@ -4,6 +4,7 @@ date: "2016-01-02T18:48:23+01:00"
 translationKey: "die-weine/uno-barrique"
 weight: 2
 image: "/images/2020/10/UNO-BARRIQUE-1152x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Eine Auslese erster Güte, rund 18 Monate in Schweizer Barrique ausgebaut.\
 Ein aussergewöhnlicher Merlot, der hervorragend zu Wild, dunklem Fleisch, Braten oder Käse passt. Er lässt sich aber auch einfach glasweise geniessen.

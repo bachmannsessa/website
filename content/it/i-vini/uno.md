@@ -3,7 +3,8 @@ title: "UNO"
 date: "2017-06-05T14:24:19+02:00"
 translationKey: "die-weine/uno"
 weight: 1
-image: "/images/2016/02/uno.jpg"
+image: "/images/2021/03/UNO-2-1162x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Vinificato esclusivamente dal Merlot, fruttoso, aromatico Merlot DOC Sessa. Pigiato separatamente a seconda dell’anno e della situazione individuale. Tipico aroma di frutta, ricorda il sapore dei mirtilli selvatici del posto (soprattutto di Valle e Cavazzé) e delle more (di Chioso).
 

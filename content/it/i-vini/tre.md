@@ -3,7 +3,8 @@ title: "TRE"
 date: "2017-06-05T14:31:17+02:00"
 translationKey: "die-weine/tre"
 weight: 7
-image: "/images/2016/02/tre.jpg"
+image: "/images/2020/10/TRE-1152x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Cuvèe di Gewürztraminer, Completer e Sauvignon Bianco. Vino bianco vinificato senza residui zuccherini, splendente con un colore giallo-oro raggiante, deciso al naso o al palato con un fine aroma della vite Gewürztraminer (litschi e arancio). Prende la sua decisa struttura grazie alla freschezza e all’acidità della vite Completer.
 

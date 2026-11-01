@@ -1,7 +1,7 @@
 {{- /* dict: page, title, subtitle, image, large */ -}}
 {{- $img := .image | default .page.Params.image | default site.Params.defaultImage -}}
 <header class="hero{{ if .large }} hero--large{{ end }}">
-  {{ partial "picture.html" (dict "src" $img "sizes" "100vw" "class" "hero__img" "loading" "eager") }}
+  {{ partial "picture.html" (dict "src" $img "sizes" "100vw" "class" "hero__img" "loading" "eager" "position" .page.Params.imagePosition) }}
   <div class="hero__text">
     <h1>{{ .title | default .page.Title }}</h1>
     {{- with .subtitle }}<p class="hero__sub">{{ . }}</p>{{ end }}

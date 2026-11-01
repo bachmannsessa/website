@@ -32,8 +32,7 @@ Sobald der Umbau wirklich fertig ist, werde ich das Studio und mindestens eines 
 
 Weil der Umbau nicht wie erhofft und vorgesehen Ende Mai fertig war, konnte ich nicht am offiziellen Tag der offenen Weinkeller teilnehmen. Ein offizieller Tag der offenen Tür ist jedoch noch geplant. Informationen folgen.
 
-**\
-**
+
 
 **Im Rebberg: Farbumschlag**
 

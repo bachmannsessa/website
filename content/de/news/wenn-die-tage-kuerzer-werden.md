@@ -22,7 +22,7 @@ Eine besondere Freude machte mir der Besuch meiner «alten» Fussballer-Kollegen
 
 Nach dem ersten «Lehrjahr» im letzten Sommer arbeitet Andrea Narlati aus Cuveglio seit Mai als Grenzgänger bei mir auf dem Betrieb. Seine motivierte und aufgestellte Art ist eine Freude und Bereicherung. Daneben durfte ich auch dieses Jahr wieder auf die grosse Hilfe durch Pia und Piero und neu durch Gurli zählen. Gerade in diesem sehr arbeitsintensiven Jahr war das unerlässlich. Dafür herzlichen Dank.
 
-An der diesjährigen **Wine-Trophy** in Zürich, einer Prämierung europäischer Weine, wurde mein «**UNO» 2022 mit 90,6 Punkten als drittbester Tessiner Rotwein mit einem Golddiplom** ausgezeichnet. Der **«DUE» 2020** erhielt 88,2 Punkte und somit wie im Vorjahr ein **Silberdiplom**.
+An der diesjährigen **Wine-Trophy** in Zürich, einer Prämierung europäischer Weine, wurde mein **«UNO» 2022 mit 90,6 Punkten als drittbester Tessiner Rotwein mit einem Golddiplom** ausgezeichnet. Der **«DUE» 2020** erhielt 88,2 Punkte und somit wie im Vorjahr ein **Silberdiplom**.
 
 Am **Grand Prix du Vin Suisse** wurde der **«UNO Barrique» 2020 mit einem Golddiplom** ausgezeichnet, nachdem er ein Jahr zuvor in Zürich (Wine-Trophy) mit Silber gekürt wurde. Das bestätigt, dass meine Weine mit der Flaschenlagerung an Qualität gewinnen.
 

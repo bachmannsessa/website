@@ -20,8 +20,8 @@ Diesen Sommer hat Andrea, der mir nun drei Jahre im Rebberg geholfen hat, die Au
 
 Nun bin ich auf der Suche nach einer neuen Hilfe für das nächste Jahr. Das sollte eigentlich mein letztes sein. Weil meine Tochter schon länger die Absicht geäussert hat, allenfalls einzusteigen, und nun auch konkrete Schritte für eine entsprechende Ausbildung unternimmt, ist das aber nicht mehr so klar.
 
-**Arbeit im Keller\
-**Auch dieses Jahr nahm ich mit verschiedenen Weinen an Prämierungen teil. Beim Grand Prix du Vin Suisse erreichten alle Weine Punkte zwischen knapp 85 und 88 Punkten. Am besten wurde der **DUE 2021** bewertet und mit einem **Silberdiplom** ausgezeichnet. Ähnlich wurden die gleichen Weine in Zürich bewertet, dort war jedoch der **TRE 2023**, bei dem erstmals Completer die Hauptrebsorte war, ebenfalls mit einem **Silberdiplom**, der Beste.
+**Arbeit im Keller**\
+Auch dieses Jahr nahm ich mit verschiedenen Weinen an Prämierungen teil. Beim Grand Prix du Vin Suisse erreichten alle Weine Punkte zwischen knapp 85 und 88 Punkten. Am besten wurde der **DUE 2021** bewertet und mit einem **Silberdiplom** ausgezeichnet. Ähnlich wurden die gleichen Weine in Zürich bewertet, dort war jedoch der **TRE 2023**, bei dem erstmals Completer die Hauptrebsorte war, ebenfalls mit einem **Silberdiplom**, der Beste.
 
 Anlässlich der Frühjahres-Verkostung von Piwi-Weinen wurde der **MADEMOISELLE 2023** mit 95 Punkten und einem **Golddiplom** ausgezeichnet. Es ist ein sehr aromatischer Rosato, mit eher wenig Säure und einer schönen, kräftig-rosaroten Farbe. Dieser Jahrgang neigt sich dem Ende entgegen, für Liebhaber eher klassischer, orange-bernsteinfarbiger und etwas knackigerer Roseweine, aber mit der gleichen, schönen Chambourcin-Aromatik, ist schon der Jahrgang 2024 erhältlich.
 

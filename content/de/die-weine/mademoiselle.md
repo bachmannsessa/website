@@ -4,6 +4,7 @@ date: "2022-04-27T14:37:54+02:00"
 translationKey: "die-weine/mademoiselle"
 weight: 8
 image: "/images/2022/04/Mademoiselle-1227x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Wie der Vorgänger ein schöner Sommerwein, biologisch produziert, gekeltert aus der PIWI-Sorte Chambourcin. Ein Wein für Junge und Junggebliebene, aromatisch und erfrischend wie das junge Leben.
 

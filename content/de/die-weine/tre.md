@@ -4,6 +4,7 @@ date: "2016-01-02T18:49:47+01:00"
 translationKey: "die-weine/tre"
 weight: 7
 image: "/images/2020/10/TRE-1152x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Cuvée aus Gewürztraminer, Sauvignon Blanc und Completer.\
 Der ohne Restsüsse vinifizierte Weisswein leuchtet in einem strahlenden Goldgelb und überzeugt in der Nase und im Gaumen mit der feinen Aromatik der Gewürztraminerrebe (ein Gemisch aus Nelken, Zimt, Litschi und Orange). Erhält seine Struktur dank der Säure der Completer-Rebe und einen Hauch Frische dank den Zitrusnoten des Sauvignon Blanc.

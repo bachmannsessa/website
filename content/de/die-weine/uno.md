@@ -4,6 +4,7 @@ date: "2016-01-02T18:46:39+01:00"
 translationKey: "die-weine/uno"
 weight: 1
 image: "/images/2021/03/UNO-2-1162x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Ausschliesslich aus Merlot vinifizierter, fruchtig aromatischer Merlot, meist gekeltert aus den Lagen Chioso und Secch.
 

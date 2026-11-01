@@ -49,8 +49,8 @@ inoltre anche di Gurli. Proprio in quest’anno di intenso lavoro. tutto ciò è
 Grazie di cuore.\
 \
 Quest’anno al **Wine Trophy** di Zurigo, una cerimonia di premiazione di vini europei, il mio\
-**“UNO” 2022 è stato premiato con il diploma d’oro come terzo miglior vino\
-rosso ticinese con 90,6 punt**i. Il **“DUE” 2020** ha ricevuto 88,2 punti e quindi, come\
+**“UNO” 2022** è stato premiato con il **diploma d’oro** come terzo miglior vino\
+rosso ticinese con 90,6 punti. Il **“DUE” 2020** ha ricevuto 88,2 punti e quindi, come\
 l’anno precedente, un **diploma d’argento**.
 
 Al **Grand Prix du Vin Suisse l’“UNO Barrique” 2020 è stato premiato con un\

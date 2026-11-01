@@ -3,7 +3,8 @@ title: "Sauvignon Blanc"
 date: "2019-07-28T16:04:30+02:00"
 translationKey: "die-weine/sauvignon-blanc"
 weight: 6
-image: "/images/2019/07/19RZ_sauvignonblanc-1.jpg"
+image: "/images/2020/10/SAUVIGNON-BLANC-1152x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Un vino bianco, vinificato senza residui zuccherini, splendente con un colore giallo-oro raggiante, deciso al naso o al palato con un fine aroma e l’acidità della vite Sauvignon Bianco.
 

@@ -3,7 +3,8 @@ title: "UNO Barrique"
 date: "2017-06-05T14:28:25+02:00"
 translationKey: "die-weine/uno-barrique"
 weight: 2
-image: "/images/2016/02/uno.jpg"
+image: "/images/2020/10/UNO-BARRIQUE-1152x2048.jpg"
+imagePosition: "50% 70%"
 ---
 Una selezione di prima qualità, maturato circa 18 mesi in barrique svizzere. Uno straordinario Merlot, l’eccellente con la selvaggina, la carne rossa, l’arrosto o il formaggio. Si può gustare anche al bicchiere.
 

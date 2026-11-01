@@ -1,4 +1,6 @@
-{{- /* Responsive image. dict: src (path), alt, sizes, class, loading, widths */ -}}
+{{- /* Responsive image. dict: src (path), alt, sizes, class, loading, widths, position (CSS object-position) */ -}}
+{{- $style := "" -}}
+{{- with .position }}{{ $style = printf "object-position: %s" . | safeHTMLAttr }}{{ end -}}
 {{- $img := partial "image-resource.html" .src -}}
 {{- $alt := .alt | default "" -}}
 {{- $sizes := .sizes | default "(max-width: 900px) 100vw, 900px" -}}
@@ -22,7 +24,7 @@
       {{- $set = slice (printf "%s %dw" $fallback.RelPermalink $fallback.Width) -}}
     {{- end -}}
     <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $set ", " }}" sizes="{{ $sizes }}"
-         width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}" class="{{ .class }}" loading="{{ $loading }}" decoding="async">
+         width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}" class="{{ .class }}" loading="{{ $loading }}" decoding="async"{{ with $style }} style="{{ . }}"{{ end }}>
   {{- end -}}
 {{- else if .src -}}
   {{- warnf "Bild nicht gefunden: %s" .src -}}
