@@ -488,3 +488,10 @@ section ~ .post__body, .hero + .post__body { padding-top: clamp(40px, 6vw, 72px)
 .story__text h2 { margin-top: 0; font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
 .story__text { font-size: 1.08rem; line-height: 1.8; }
 @media (max-width: 860px) { .story__inner { grid-template-columns: 1fr; } .story__img { position: static; max-width: 420px; } }
+
+/* balanced card grid (column count set per grid via --cols) */
+.cards--balanced { --gap: 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
+.cards--balanced > .card { flex: 0 0 calc((100% - (var(--cols, 4) - 1) * var(--gap)) / var(--cols, 4)); }
+.post-nav .cards--balanced { margin-top: 0; }
+@media (max-width: 900px) { .cards--balanced { --cols: 2 !important; } }
+@media (max-width: 520px) { .cards--balanced { --cols: 1 !important; } }

@@ -41,7 +41,7 @@
   {{- with where .RegularPages.ByWeight "RelPermalink" "ne" "" }}
   <section class="sec sec--tint sec--cards">
     <div class="sec__inner">
-      <div class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</div>
+      {{ partial "cards.html" . }}
     </div>
   </section>
   {{- end }}

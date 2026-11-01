@@ -1,0 +1,5 @@
+{{- /* Grid of page cards, balanced over the rows: max 4 per row, e.g. 8 → 4+4, 7 → 4+3, 6 → 3+3, 5 → 3+2 */ -}}
+{{- $n := len . -}}
+{{- $rows := math.Ceil (div (float $n) 4) -}}
+{{- $cols := int (math.Ceil (div (float $n) $rows)) -}}
+<div class="cards cards--balanced" style="--cols: {{ $cols }}">{{ range . }}{{ partial "card.html" . }}{{ end }}</div>
