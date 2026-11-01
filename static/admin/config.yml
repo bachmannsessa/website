@@ -1,0 +1,113 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.248.0/schema/sveltia-cms.json
+# Sveltia CMS – Web-Editor unter https://bachmannsessa.ch/admin/
+# Doku: https://sveltiacms.app/en/docs
+
+backend:
+  name: github
+  repo: GITHUB_USER/REPO_NAME   # TODO: echten Repo-Namen eintragen, z.B. aurelio/bachmannsessa-homepage
+  branch: main
+  commit_messages:
+    create: "Neu: {{collection}} „{{slug}}“"
+    update: "Geändert: {{collection}} „{{slug}}“"
+    delete: "Gelöscht: {{collection}} „{{slug}}“"
+    uploadMedia: "Bild hochgeladen: {{path}}"
+    deleteMedia: "Bild gelöscht: {{path}}"
+
+site_url: https://bachmannsessa.ch
+display_url: https://bachmannsessa.ch
+
+# Bilder: Hugo verarbeitet sie aus assets/ (verkleinert, WebP)
+media_folder: assets/images/uploads
+public_folder: /images/uploads
+
+media_libraries:
+  default:
+    config:
+      max_file_size: 30000000          # 30 MB (Handyfotos)
+      transformations:
+        raster_image:                   # beim Hochladen automatisch verkleinern
+          format: webp
+          quality: 85
+          width: 2048
+          height: 2048
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+i18n:
+  structure: multiple_folders
+  locales: [de, it]
+  default_locale: de
+  initial_locales: all                  # Italienisch kann pro Beitrag deaktiviert werden
+  canonical_slug:
+    key: translationKey
+    value: "news/{{slug}}"
+
+collections:
+  - name: news
+    label: News
+    label_singular: News-Beitrag
+    description: Neuer Beitrag erscheint automatisch zuoberst auf der Startseite.
+    folder: content/{{locale}}/news
+    create: true
+    i18n: true
+    slug: "{{title | localize}}"
+    media_folder: /assets/images/news
+    public_folder: /images/news
+    summary: "{{date | date('DD.MM.YYYY')}} – {{title}}"
+    sortable_fields:
+      fields: [date, title]
+      default:
+        field: date
+        direction: descending
+    preview_path: "/{{year}}/{{month}}/{{day}}/{{slug}}/"
+    fields:
+      - { name: title, label: Titel, widget: string, i18n: true }
+      - { name: date, label: Datum, widget: datetime, i18n: duplicate }
+      - name: image
+        label: Titelbild
+        widget: image
+        required: false
+        i18n: duplicate
+        hint: Grosses Bild oben im Beitrag und in der Übersicht.
+      - name: draft
+        label: Entwurf (noch nicht veröffentlichen)
+        widget: boolean
+        default: false
+        required: false
+        i18n: duplicate
+      - { name: body, label: Text, widget: markdown, i18n: true }
+
+  - name: preise
+    label: Weine & Preise
+    description: Weine und Preise im Bestellformular.
+    files:
+      - name: weine
+        label: Bestellformular
+        file: data/weine.yaml
+        fields:
+          - { name: versand_pro_karton, label: "Portoanteil pro 6er-Karton (CHF)", widget: number, value_type: int }
+          - { name: mwst, label: MWST-Satz, widget: string }
+          - name: gruppen
+            label: Gruppen
+            widget: list
+            summary: "{{titel.de}}"
+            fields:
+              - name: titel
+                label: Titel
+                widget: object
+                fields:
+                  - { name: de, label: Deutsch, widget: string }
+                  - { name: it, label: Italienisch, widget: string }
+              - name: weine
+                label: Weine
+                widget: list
+                summary: "{{name}} – CHF {{preis}}"
+                fields:
+                  - { name: id, label: "ID (nicht ändern)", widget: string }
+                  - { name: name, label: Name, widget: string }
+                  - { name: beschreibung, label: Beschreibung, widget: string }
+                  - { name: preis, label: "Preis (CHF)", widget: number, value_type: float, step: 0.5 }
+                  - { name: inhalt, label: Inhalt, widget: string, default: "75 cl" }
+                  - { name: ausverkauft, label: Ausverkauft, widget: boolean, default: false, required: false }

@@ -1,0 +1,39 @@
+---
+title: "Januar 2022"
+date: "2022-01-12T15:35:51+01:00"
+translationKey: "news/januar-2022"
+image: "/images/2022/01/DSC_0484-2048x1152.jpg"
+---
+Ein neues Jahr! Die Tage sind noch kurz, der Frost hat die Natur im Griff. Auch die Reben ruhen und erholen sich vom vorangegangenen, schwierigen Vegetationsjahr 2021.
+
+2021 stellte hohe Anforderungen. Ein zu Beginn sehr schneereicher Winter und daran anschliessende, kalte und trockene Monate Januar bis März 2021 waren zwar ideale Voraussetzungen für einen nicht zu frühen Austrieb der Reben und für weniger Schädlinge im Jahresverlauf. Da es auch in den üblicherweise regenreichen Monaten April und Mai mit einigen Nord- und Nordwest-Wetterlagen wenig regnete, blieb die Vegetation etwa 10 Tage hinter dem durchschnittlichen Stand der Vorjahre zurück.
+
+Im Juni zeigten Merlot und sogar Cabernet Jura (eine pilzwiderstandsfähige Rebsorte) in der Lage Chioso/Secch erste Oidium-Symptome (Echter Mehltau). Diese Lage ergibt aufgrund der geologischen und hydrologischen Situation zwar wunderbare, aromatisch frische Weine, das Mikroklima ist aber leider wegen der nahen Bäume und des, dadurch bedingt, fehlenden Berg- und Talwindes oft warm und feucht.
+
+Ein schlimmes Unwetter mit Hagelkörnern in Tennisballgrösse läutete am 8. Juli 2021 einen Wetterwechsel ein. Geschockt verharrten die Reben 10 Tage im nun beginnenden Regen. Bis am 4. August unterbrachen nur vier regenfreie Tage die Monotonie der Julitage. Das waren nun ideale Voraussetzungen für die Pilzsporen des falschen Mehltaus. Die Merlot-Rebstöcke im Valle zeigten als erste den Befall, kurze später folgten die 100 m höher gelegenen Reben im Borghirolo.
+
+Obwohl ich nun auch synthetische Pflanzenschutzmittel einsetzte, weitete sich der Peronospora-Befall aus. Dies auch deshalb, weil ich die Reben nach dem Farbumschlag Mitte August nicht mehr behandeln durfte.
+
+Die geschilderte Wettersituation führte auch dazu, dass sich die Reife weiter verzögerte. Nach einem schönen, aber nassen Monat September waren dann zwischen dem 24. September und dem 10. Oktober die ErntehelferInnen gefordert. Vor allem die Lese des Merlot war eine echte Herausforderung und es gebührt allen Mitarbeitenden für ihre Arbeit ein grosses Dankeschön.
+
+Nun reift der Wein im Keller. Der biologische Säureabbau ist, mit einer Ausnahme, abgeschlossen. Die Qualität des Jungweins erfreut mich. Alle Weine haben leicht tiefere Säurehalte als in den beiden vorangegangenen Jahren, sie sind aromatisch und wiederum vielversprechend.
+
+Glücklicherweise schätzen inzwischen viele Weinliebhaber meine Weine. Die schwierige Situation in der Gastronomie führte zu Beginn des letzten Jahres zwar dazu, dass diese Verkäufe ausblieben. Der Direktverkauf an Private entwickelte sich aber gut und so waren leider schon bald die Weissweine («tre» und «sauvignon blanc» sowie der «uno barrique», aber auch der erstmals produzierte Rosato («Mademoiselle Foch») ausverkauft.
+
+Seit Anfang Dezember sind der «tre» 2020 sowie der «uno barrique» 2019 abgefüllt. Der «tre» 2020 unterscheidet sich deutlich vom Jahrgang 2019. Die mengenmässig schlechte Gewürztraminer- und Completer-Ernte 2020 führte zu einem anderen Mischverhältnis der drei Sorten (v.a. einem höheren Sauvignon Blanc-Anteil) und damit zu einem frischeren, knackigeren «tre» (obwohl er mit 13.4 % vol deutlich mehr Alkohol hat als der Vorjahreswein).
+
+Der «uno barrique» ist schon jetzt weich und elegant, mit vielen aromatischen Nuancen. Wenn er sich in zwei, drei Monaten wieder «gefunden hat», wird er ein Genuss sein.
+
+Daneben sind zur Zeit der «la brace» und der «chamboursin», beide 2018, im Verkauf. Beides schöne, sehr aromatische «PIWI»-Weine, die an der internationalen PIWI-Prämierung 2021 (nach den Jahrgängen 2017 im Vorjahr) erneut ausgezeichnet wurden («la brace» mit 89 Punkten und Silber, «chamboursin» mit 94 Punkten und Gold).
+
+Da der (einfache) «uno» 2019 bereits und der «due» 2018 bald ausverkauft sind, ist die Abfüllung der Nachfolgejahrgänge dieser beiden Weine für Ende März 2022 geplant. Sicher werden dann auch die 2019er Jahrgänge des «la brace» und des «chamboursin» abgefüllt. Ob der «sauvignon blanc» 2021 dann auch schon abgefüllt werden kann, wird sich zeigen.
+
+2022 habe ich meine Preise etwas angepasst. Die beiden roten Barrique-Weine «uno barrique» und «due» werden auf Fr. 28 erhöht.  Der «tre» auf Fr. 26. «uno», «chamboursin» und «sauvignon blanc» werden auf Fr. 20 angehoben. «la brace» und «mademoiselle» bleiben bei Fr. 18.
+
+Der Abholrabatt beträgt neu Fr. 5 pro 6er Karton und ist damit also mengengestaffelt. Im Gegenzug wird für den Postversand ein Portoanteil von Fr. 5 pro Karton in Rechnung gestellt.
+
+Immer noch in der Hoffnung auf eine Rückkehr zur alten Normalität – was aber immer unwahrscheinlicher scheint – wünsche ich allen viel Freude im 2022, ein gutes Immunsystem, und freue mich auf eure Besuche hier in Sessa.
+
+Herzlich
+
+Beat

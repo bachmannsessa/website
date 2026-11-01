@@ -27,6 +27,9 @@
 <section class="block">
   <h2 class="block__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   <div class="cards">{{ range .RegularPages.ByWeight }}{{ partial "card.html" . }}{{ end }}</div>
+  {{- with $.Params.orderPage }}{{ with site.GetPage . }}
+  <p class="block__cta"><a class="btn btn--large" href="{{ .RelPermalink }}">{{ T "orderNow" }} →</a></p>
+  {{- end }}{{ end }}
 </section>
 {{- end }}{{ end }}
 {{ end }}

@@ -222,3 +222,6 @@ h4 { font-size: 1.05rem; }
 .agegate__q { margin: 0 0 24px; }
 .agegate__buttons { display: flex; gap: 12px; justify-content: center; }
 .agegate__buttons[hidden], .agegate__denied[hidden] { display: none; }
+
+.block__cta { margin: 40px 0 0; text-align: center; }
+.btn--large { font-size: 1rem; padding: 1em 2.4em; }

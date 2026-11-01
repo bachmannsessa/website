@@ -16,7 +16,7 @@ hugo --gc --minify           # production build into ./public
 | Path | What |
 |------|------|
 | `content/de/`, `content/it/` | All pages and news posts (Markdown). Translations are linked via `translationKey`. |
-| `content/*/news/` | News posts. File name `YYYY-MM-DD-slug.md`, URL becomes `/YYYY/MM/DD/slug/` (same as WordPress). |
+| `content/*/news/` | News posts. File name `<slug>.md`, URL becomes `/YYYY/MM/DD/<slug>/` (date from front matter, same as WordPress). |
 | `data/weine.yaml` | Wines + prices for the order form. |
 | `assets/images/` | Images (originals). Hugo generates resized WebP versions at build time. |
 | `layouts/` | Templates (`home.html`, `page.html`, `section.html`, `news/`, `_partials/`, `_shortcodes/`). |
@@ -24,22 +24,40 @@ hugo --gc --minify           # production build into ./public
 | `i18n/` | UI strings DE/IT. |
 | `hugo.toml` | Config, menus, form settings. |
 
-## Writing a news post
+## Web editor (Sveltia CMS) – for writing news
 
-Create `content/de/news/2026-11-01-titel.md` (and the Italian one in `content/it/news/`):
+`/admin/` (e.g. https://bachmannsessa.ch/admin/) is a web editor for news posts and the wine
+price list. It commits directly to this repo; the deploy workflow then publishes within ~2 minutes.
+Config: `static/admin/config.yml`.
+
+- German and Italian are edited side by side in one entry (Italian can be switched off per post
+  via the ⋮ menu). Translations are linked automatically via `translationKey`.
+- Uploaded photos are converted to WebP (max. 2048px) in the browser before being committed.
+- "Entwurf" (draft) posts are committed but not published.
+
+Setup:
+1. Put the real repo name into `static/admin/config.yml` → `backend.repo`.
+2. Give your father a GitHub account and add it as collaborator on the repo.
+3. Sign-in: simplest is **"Sign In Using Access Token"** – create a fine-grained token
+   (GitHub → Settings → Developer settings → Fine-grained tokens) for this repo with
+   *Contents: Read and write*. It's stored in the browser, so it's a one-time step.
+   For a proper "Sign in with GitHub" button, deploy
+   [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) (free Cloudflare Worker) and set
+   `backend.base_url`.
+
+### Writing a news post by hand
+
+Create `content/de/news/herbst-im-rebberg.md` (and optionally `content/it/news/autunno-nel-vigneto.md`):
 
 ```markdown
 ---
 title: "Herbst im Rebberg"
 date: 2026-11-01T10:00:00+01:00
-slug: "herbst-im-rebberg"
 translationKey: "news/herbst-im-rebberg"   # same key in the IT file links the two
-image: "/images/2026/11/rebberg.jpg"        # put the file in assets/images/2026/11/
+image: "/images/news/rebberg.jpg"          # file lives in assets/images/news/
 ---
 
 Text in Markdown …
-
-![Bildbeschreibung](/images/2026/11/trauben.jpg)
 ```
 
 The start page always shows the newest post automatically.

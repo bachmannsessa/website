@@ -11,7 +11,7 @@ timeZone = "Europe/Zurich"
 
 # News-Beiträge behalten die alten WordPress-URLs: /2026/05/15/titel/
 [permalinks.page]
-  news = "/:year/:month/:day/:slug/"
+  news = "/:year/:month/:day/:contentbasename/"
 
 [markup.goldmark.renderer]
   unsafe = true # erlaubt HTML (z.B. Karten-iframe) in Markdown
