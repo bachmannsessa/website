@@ -1,0 +1,52 @@
+{{- $lang := site.Language.Lang -}}
+{{- $d := hugo.Data.weine -}}
+<form class="form order" method="post" action="{{ site.Params.forms.endpoint }}" data-ajax data-order
+      data-msg-sending="{{ T "sending" }}" data-msg-sent="{{ T "orderSent" }}" data-msg-error="{{ T "sendError" }}"
+      data-msg-empty="{{ T "orderEmpty" }}" data-shipping="{{ $d.versand_pro_karton }}">
+  {{ partial "form-hidden.html" (dict "subject" (T "orderSubject")) }}
+  <input type="hidden" name="Bestellung" value="">
+  <input type="hidden" name="Total" value="">
+  <input type="hidden" name="Sprache" value="{{ $lang }}">
+
+  {{- range $d.gruppen }}
+  <fieldset class="order__group">
+    <legend>{{ index .titel $lang }}</legend>
+    {{- range .weine }}
+    <div class="order__row{{ if .ausverkauft }} is-soldout{{ end }}">
+      <div class="order__wine"><strong>{{ .name }}</strong><span>{{ .beschreibung }}</span></div>
+      <div class="order__price">CHF {{ lang.FormatNumber 2 .preis }} <small>/ {{ .inhalt }}</small></div>
+      <div class="order__qty">
+        {{- if .ausverkauft }}<em>{{ T "soldOut" }}</em>{{ else }}
+        <input type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="0" aria-label="{{ .name }} – {{ T "quantity" }}"
+               data-wine="{{ .name }}" data-price="{{ .preis }}" data-volume="{{ .inhalt }}">
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+  </fieldset>
+  {{- end }}
+
+  <div class="order__total">
+    <span>{{ T "total" }}: <strong data-total>CHF 0.00</strong> (<span data-bottles>0</span> {{ T "bottles" }})</span>
+    <small>{{ T "shippingNote" (dict "amount" $d.versand_pro_karton) }}</small>
+  </div>
+
+  <fieldset>
+    <legend>{{ T "billingAddress" }}</legend>
+    <div class="form__grid">
+      <label class="span-2">{{ T "salutation" }}
+        <select name="Anrede"><option value="">{{ T "choose" }}</option><option>{{ T "mr" }}</option><option>{{ T "mrs" }}</option><option>{{ T "diverse" }}</option></select>
+      </label>
+      <label>{{ T "firstName" }} *<input type="text" name="Vorname" required autocomplete="given-name"></label>
+      <label>{{ T "name" }} *<input type="text" name="Name" required autocomplete="family-name"></label>
+      <label class="span-2">{{ T "address" }} *<input type="text" name="Adresse" required autocomplete="street-address"></label>
+      <label>{{ T "zip" }} *<input type="text" name="PLZ" required autocomplete="postal-code" inputmode="numeric"></label>
+      <label>{{ T "city" }} *<input type="text" name="Ort" required autocomplete="address-level2"></label>
+      <label>{{ T "email" }} *<input type="email" name="email" required autocomplete="email"></label>
+      <label>{{ T "phone" }}<input type="tel" name="Telefon" autocomplete="tel"></label>
+      <label class="span-2">{{ T "comments" }}<textarea name="Bemerkungen" rows="4"></textarea></label>
+    </div>
+    <label class="check"><input type="checkbox" name="AGB_und_18_Jahre" value="ja" required> {{ T "acceptTerms" }}</label>
+  </fieldset>
+  <button class="btn" type="submit">{{ T "order" }}</button>
+</form>

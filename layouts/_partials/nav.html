@@ -1,0 +1,36 @@
+<nav class="nav" aria-label="Main">
+  <div class="nav__inner">
+    <a class="nav__brand" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav__toggle-bars" aria-hidden="true"></span><span class="sr-only">{{ T "menu" }}</span>
+    </button>
+    <ul class="nav__menu" id="nav-menu">
+      {{- $current := . }}
+      {{- range site.Menus.main }}
+      {{- $children := slice }}
+      {{- with .Page }}{{ if and .IsSection (ne .Section "news") }}{{ $children = .RegularPages.ByWeight }}{{ end }}{{ end }}
+      <li class="nav__item{{ if $children }} has-sub{{ end }}{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (and .Page ($current.IsDescendant .Page) (not .Page.IsHome)) }} is-active{{ end }}">
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{- if $children }}
+        <button class="nav__sub-toggle" aria-expanded="false" aria-label="{{ .Name }}"></button>
+        <ul class="nav__sub">
+          {{- range $children }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+        </ul>
+        {{- end }}
+      </li>
+      {{- end }}
+      <li class="nav__lang">
+        {{- /* Link zur Übersetzung der aktuellen Seite, sonst zur Startseite der anderen Sprache */}}
+        {{- $page := . }}
+        {{- range hugo.Sites }}
+          {{- if ne .Language.Lang site.Language.Lang }}
+            {{- $lang := .Language.Lang }}
+            {{- $target := .Home.RelPermalink }}
+            {{- range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+            <a href="{{ $target }}" hreflang="{{ .Language.Locale }}" lang="{{ .Language.Locale }}">{{ .Language.Label }}</a>
+          {{- end }}
+        {{- end }}
+      </li>
+    </ul>
+  </div>
+</nav>

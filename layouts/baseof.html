@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  {{- partial "head.html" . }}
+</head>
+<body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }}">
+  {{- partial "nav.html" . }}
+  <main id="main">
+    {{- block "main" . }}{{ end }}
+  </main>
+  {{- partial "footer.html" . }}
+  {{- if site.Params.ageGate }}{{ partial "agegate.html" . }}{{ end }}
+  {{- with resources.Get "js/main.js" | js.Build (dict "minify" true) | fingerprint }}
+  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+  {{- end }}
+</body>
+</html>

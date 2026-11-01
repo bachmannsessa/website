@@ -1,0 +1,10 @@
+{
+  "name": "wp-migrate",
+  "private": true,
+  "description": "One-off WordPress -> Hugo content migration for bachmannsessa.ch",
+  "dependencies": {
+    "jsdom": "24.1.0",
+    "turndown": "7.2.0",
+    "turndown-plugin-gfm": "1.0.2"
+  }
+}

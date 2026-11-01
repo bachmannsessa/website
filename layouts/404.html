@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ partial "hero.html" (dict "page" . "title" "404") }}
+<div class="block"><div class="prose">
+  <p>{{ T "notFound" }}</p>
+  <p><a class="btn" href="{{ site.Home.RelPermalink }}">{{ T "backHome" }}</a></p>
+</div></div>
+{{ end }}

@@ -1,0 +1,29 @@
+{{- /* Responsive image. dict: src (path), alt, sizes, class, loading, widths */ -}}
+{{- $img := partial "image-resource.html" .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $sizes := .sizes | default "(max-width: 900px) 100vw, 900px" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- if $img -}}
+  {{- if in (slice "gif" "svg" "svg+xml") $img.MediaType.SubType -}}
+    <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" class="{{ .class }}" loading="{{ $loading }}">
+  {{- else -}}
+    {{- $set := slice -}}
+    {{- $fallback := "" -}}
+    {{- range (.widths | default (slice 480 960 1600 2048)) -}}
+      {{- if le . $img.Width -}}
+        {{- $r := $img.Resize (printf "%dx webp" .) -}}
+        {{- $set = $set | append (printf "%s %dw" $r.RelPermalink $r.Width) -}}
+        {{- if not $fallback }}{{ $fallback = $r }}{{ end -}}
+        {{- if le . 960 }}{{ $fallback = $r }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if not $set -}}
+      {{- $fallback = $img.Resize (printf "%dx webp" $img.Width) -}}
+      {{- $set = slice (printf "%s %dw" $fallback.RelPermalink $fallback.Width) -}}
+    {{- end -}}
+    <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $set ", " }}" sizes="{{ $sizes }}"
+         width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}" class="{{ .class }}" loading="{{ $loading }}" decoding="async">
+  {{- end -}}
+{{- else if .src -}}
+  {{- warnf "Bild nicht gefunden: %s" .src -}}
+{{- end -}}

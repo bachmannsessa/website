@@ -1,0 +1,103 @@
+baseURL = "https://bachmannsessa.ch/"
+title = "borghirolovini"
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+timeZone = "Europe/Zurich"
+
+[pagination]
+  pagerSize = 10
+
+# News-Beiträge behalten die alten WordPress-URLs: /2026/05/15/titel/
+[permalinks.page]
+  news = "/:year/:month/:day/:slug/"
+
+[markup.goldmark.renderer]
+  unsafe = true # erlaubt HTML (z.B. Karten-iframe) in Markdown
+
+[imaging.webp]
+  quality = 80
+
+[params]
+  owner = "Beat Bachmann"
+  address = "Borghirolo · 6997 Sessa"
+  # Bild, falls eine Seite kein eigenes "image" hat
+  defaultImage = "images/2021/03/ALLE-FLASCHEN-2048x1152.jpg"
+  # Altersabfrage beim ersten Besuch anzeigen
+  ageGate = true
+
+  # Formulare (Kontakt + Bestellung) werden über web3forms.com per E-Mail zugestellt.
+  # Access Key auf https://web3forms.com mit der Empfänger-Adresse erstellen und hier eintragen.
+  [params.forms]
+    endpoint = "https://api.web3forms.com/submit"
+    accessKey = ""
+
+[languages]
+  [languages.de]
+    label = "Deutsch"
+    locale = "de-CH"
+    contentDir = "content/de"
+    weight = 1
+    [[languages.de.menus.main]]
+      name = "News"
+      pageRef = "/news"
+      weight = 10
+    [[languages.de.menus.main]]
+      name = "Bestellung"
+      pageRef = "/bestellung"
+      weight = 20
+    [[languages.de.menus.main]]
+      name = "Geschichte"
+      pageRef = "/geschichte"
+      weight = 30
+    [[languages.de.menus.main]]
+      name = "Rebsorten"
+      pageRef = "/rebsorten"
+      weight = 40
+    [[languages.de.menus.main]]
+      name = "Böden"
+      pageRef = "/die-boden"
+      weight = 50
+    [[languages.de.menus.main]]
+      name = "Weine"
+      pageRef = "/die-weine"
+      weight = 60
+    [[languages.de.menus.main]]
+      name = "Kontakt"
+      pageRef = "/kontakt"
+      weight = 70
+
+  [languages.it]
+    label = "Italiano"
+    locale = "it-CH"
+    contentDir = "content/it"
+    weight = 2
+    [[languages.it.menus.main]]
+      name = "Novità"
+      pageRef = "/news"
+      weight = 10
+    [[languages.it.menus.main]]
+      name = "Ordinazione"
+      pageRef = "/ordinazione"
+      weight = 20
+    [[languages.it.menus.main]]
+      name = "Storia"
+      pageRef = "/storia"
+      weight = 30
+    [[languages.it.menus.main]]
+      name = "Tipi di vite"
+      pageRef = "/tipi-die-vite"
+      weight = 40
+    [[languages.it.menus.main]]
+      name = "Il terreno"
+      pageRef = "/il-terreno"
+      weight = 50
+    [[languages.it.menus.main]]
+      name = "I vini"
+      pageRef = "/i-vini"
+      weight = 60
+    [[languages.it.menus.main]]
+      name = "Contatto"
+      pageRef = "/contatto"
+      weight = 70

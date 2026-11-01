@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ partial "hero.html" (dict "page" .) }}
+<div class="block">
+  <article class="prose">{{ .Content }}</article>
+  {{- with .Parent }}{{ if and (not .IsHome) .RegularPages }}
+  <nav class="siblings" aria-label="{{ .Title }}">
+    <a class="siblings__parent" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- range .RegularPages.ByWeight }}<a href="{{ .RelPermalink }}"{{ if eq . $ }} aria-current="page"{{ end }}>{{ .LinkTitle }}</a>{{ end }}
+  </nav>
+  {{- end }}{{ end }}
+</div>
+{{ end }}

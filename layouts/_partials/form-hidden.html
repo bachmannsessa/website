@@ -1,0 +1,9 @@
+{{- /* gemeinsame versteckte Felder für web3forms. dict: subject */ -}}
+<input type="hidden" name="access_key" value="{{ site.Params.forms.accessKey }}">
+<input type="hidden" name="subject" value="{{ .subject }}">
+<input type="hidden" name="from_name" value="{{ site.Title }} – Website">
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+{{- if not site.Params.forms.accessKey }}
+<p class="form__warn">{{ T "formNotConfigured" }}</p>
+{{- end }}
+<p class="form__status" role="status" aria-live="polite" hidden></p>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ partial "hero.html" (dict "page" . "subtitle" (.Date | time.Format ":date_long")) }}
+<div class="block">
+  <article class="prose">{{ .Content }}</article>
+  <nav class="pager">
+    {{- with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    <a href="{{ .Parent.RelPermalink }}">{{ T "allNews" }}</a>
+    {{- with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ else }}<span></span>{{ end }}
+  </nav>
+</div>
+{{ end }}

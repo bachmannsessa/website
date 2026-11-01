@@ -1,0 +1,4 @@
+{{- /* Takes an image path like "/images/2026/05/x.jpg" and returns the asset resource (or nil). */ -}}
+{{- $r := "" -}}
+{{- with . }}{{ $r = resources.Get (strings.TrimPrefix "/" .) }}{{ end -}}
+{{- return $r -}}

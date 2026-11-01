@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ partial "hero.html" (dict "page" .) }}
+<div class="block">
+  <div class="prose">{{ .Content }}</div>
+  {{- with .RegularPages.ByWeight }}
+  <div class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</div>
+  {{- end }}
+</div>
+{{ end }}

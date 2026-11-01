@@ -1,0 +1,11 @@
+<div class="agegate" id="agegate" role="dialog" aria-modal="true" aria-labelledby="agegate-q">
+  <div class="agegate__box">
+    <p class="agegate__brand">{{ site.Title }}</p>
+    <p id="agegate-q" class="agegate__q">{{ T "ageQuestion" }}</p>
+    <div class="agegate__buttons">
+      <button type="button" class="btn btn--ghost" data-age="no">{{ T "no" }}</button>
+      <button type="button" class="btn" data-age="yes">{{ T "yes" }}</button>
+    </div>
+    <p class="agegate__denied" hidden>{{ T "ageDenied" }}</p>
+  </div>
+</div>

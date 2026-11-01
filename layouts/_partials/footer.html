@@ -1,0 +1,9 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <p><strong>{{ site.Title }}</strong> · {{ site.Params.owner }} · {{ site.Params.address }}</p>
+    <p class="footer__links">
+      {{- range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+    </p>
+    <p class="footer__small">© {{ now.Year }} {{ site.Params.owner }}</p>
+  </div>
+</footer>

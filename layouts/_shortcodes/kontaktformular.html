@@ -1,0 +1,11 @@
+<form class="form" method="post" action="{{ site.Params.forms.endpoint }}" data-ajax
+      data-msg-sending="{{ T "sending" }}" data-msg-sent="{{ T "sent" }}" data-msg-error="{{ T "sendError" }}">
+  {{ partial "form-hidden.html" (dict "subject" (T "contactSubject")) }}
+  <div class="form__grid">
+    <label>{{ T "name" }} *<input type="text" name="Name" required autocomplete="name"></label>
+    <label>{{ T "email" }} *<input type="email" name="email" required autocomplete="email"></label>
+    <label class="span-2">{{ T "subject" }}<input type="text" name="Betreff"></label>
+    <label class="span-2">{{ T "message" }} *<textarea name="Nachricht" rows="8" required maxlength="5000"></textarea></label>
+  </div>
+  <button class="btn" type="submit">{{ T "send" }}</button>
+</form>

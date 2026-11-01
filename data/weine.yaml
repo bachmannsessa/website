@@ -1,0 +1,65 @@
+# Weine im Bestellformular (/bestellung/ und /it/ordinazione/)
+# - preis in CHF
+# - einen Wein vorübergehend ausblenden: "ausverkauft: true" setzen
+# - id nicht ändern (erscheint so in der Bestell-E-Mail)
+
+versand_pro_karton: 5   # CHF Portoanteil (Schweiz) pro 6er-Karton
+mwst: "8.1%"
+
+gruppen:
+  - titel: { de: "Rotweine", it: "Vini rossi" }
+    weine:
+      - id: uno
+        name: "UNO"
+        beschreibung: "Merlot di Sessa DOC Ticino"
+        preis: 22.00
+        inhalt: "75 cl"
+      - id: uno-barrique
+        name: "UNO Barrique"
+        beschreibung: "Merlot di Sessa DOC Ticino"
+        preis: 29.00
+        inhalt: "75 cl"
+      - id: due
+        name: "DUE"
+        beschreibung: "Rosso di Sessa DOC Ticino (Merlot/Cabernet Sauvignon)"
+        preis: 29.00
+        inhalt: "75 cl"
+      - id: la-brace
+        name: "la brace"
+        beschreibung: "Vino rosso della Svizzera Italiana IGT (Merlot/Cabernet Jura/ev. Maréchal Foch)"
+        preis: 19.00
+        inhalt: "75 cl"
+      - id: chamboursin
+        name: "Chamboursin"
+        beschreibung: "Vino rosso della Svizzera Italiana IGT (Chambourcin)"
+        preis: 20.00
+        inhalt: "75 cl"
+
+  - titel: { de: "Weissweine", it: "Vini bianchi" }
+    weine:
+      - id: tre
+        name: "TRE"
+        beschreibung: "Bianco della Svizzera Italiana IGT (Gewürztraminer/Completer/Sauvignon Blanc 2022)"
+        preis: 27.00
+        inhalt: "75 cl"
+      - id: sauvignon-blanc
+        name: "Sauvignon Blanc"
+        beschreibung: "Bianco di Sessa DOC Ticino"
+        preis: 23.00
+        inhalt: "75 cl"
+
+  - titel: { de: "Rosé", it: "Vini rosati" }
+    weine:
+      - id: mademoiselle
+        name: "Mademoiselle"
+        beschreibung: "Rosato della Svizzera Italiana IGT (Chambourcin)"
+        preis: 19.00
+        inhalt: "75 cl"
+
+  - titel: { de: "Grappa", it: "Grappe" }
+    weine:
+      - id: grappa
+        name: "Grappa"
+        beschreibung: "Grappa di Sessa"
+        preis: 42.00
+        inhalt: "70 cl"

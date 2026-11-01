@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+{{- $desc := .Description | default (.Summary | plainify | truncate 160) | default site.Params.address }}
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+{{- end }}
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- with partial "image-resource.html" (.Params.image | default site.Params.defaultImage) }}
+{{- with .Resize "1200x webp" }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}
+{{- end }}
+<link rel="preload" href="{{ "fonts/montserrat-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- with resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{- end }}
+{{- if site.Params.ageGate }}
+<script>try{if(localStorage.getItem('ageOk')==='1')document.documentElement.classList.add('age-ok')}catch(e){}</script>
+{{- end }}
+{{- range .AlternativeOutputFormats }}{{ printf `<link rel="%s" type="%s" href="%s">` .Rel .MediaType.Type .RelPermalink | safeHTML }}{{ end }}

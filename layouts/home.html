@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ partial "hero.html" (dict "page" . "title" site.Title "subtitle" (printf "%s · %s" site.Params.owner site.Params.address) "large" true) }}
+
+{{- with .Content }}
+<section class="block"><div class="prose">{{ . }}</div></section>
+{{- end }}
+
+{{- /* Aktuellster News-Beitrag, automatisch */}}
+{{- with site.GetPage "/news" }}
+{{- with first 1 .RegularPages.ByDate.Reverse }}{{ range . }}
+<section class="block block--news">
+  <p class="eyebrow">{{ T "latestNews" }} · {{ .Date | time.Format ":date_long" }}</p>
+  <article class="feature">
+    <div class="feature__img">{{ partial "picture.html" (dict "src" (.Params.image | default site.Params.defaultImage) "sizes" "(max-width: 800px) 100vw, 50vw") }}</div>
+    <div class="feature__text">
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Summary | plainify | truncate 400 }}</p>
+      <p><a class="btn" href="{{ .RelPermalink }}">{{ T "readMore" }}</a> <a class="link" href="{{ .Parent.RelPermalink }}">{{ T "allNews" }}</a></p>
+    </div>
+  </article>
+</section>
+{{- end }}{{ end }}
+{{- end }}
+
+{{- /* Weine-Übersicht */}}
+{{- with .Params.wineSection }}{{ with site.GetPage . }}
+<section class="block">
+  <h2 class="block__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <div class="cards">{{ range .RegularPages.ByWeight }}{{ partial "card.html" . }}{{ end }}</div>
+</section>
+{{- end }}{{ end }}
+{{ end }}
