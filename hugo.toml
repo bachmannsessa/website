@@ -27,6 +27,16 @@ timeZone = "Europe/Zurich"
   address = "Borghirolo · 6997 Sessa"     # Kurzadresse (Zeilen mit " · " getrennt)
   email = "vino@bachmannsessa.ch"
   phone = ""                              # optional, z.B. "+41 79 123 45 67"
+  # Bild, falls eine Seite kein eigenes "image" hat
+  defaultImage = "images/2021/03/ALLE-FLASCHEN-2048x1152.jpg"
+  # Karte und Routenlink (Startseite, Abschnitt "Besuch & Kontakt")
+  mapLink = "https://www.google.ch/maps/place/borghirolovini+Beat+Bachmann/@46.0070117,8.825935,17z/data=!3m1!4b1!4m5!3m4!1s0x4785d26f4ac478bd:0xf67c3b57fa03c3ba!8m2!3d46.007008!4d8.828129"
+  mapEmbed = "https://map.geo.admin.ch/embed.html?topic=ech&lang=de&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege,KML%7C%7Chttps:%2F%2Fpublic.geo.admin.ch%2Fj1RmnJGRTPOltLL9Xep4MQ&layers_visibility=false,false,false,false,true&layers_timestamp=18641231,,,,&X=96001.00&Y=707624.00&zoom=5"
+  # Altersabfrage beim ersten Besuch anzeigen
+  ageGate = true
+
+  # Hinweis: Unterabschnitte wie [params.company] müssen am Ende von [params] stehen –
+  # alles nach einer [..]-Zeile gehört sonst zu diesem Unterabschnitt.
   [params.company]                        # rechtliche Angaben (Impressum)
     name = "Vicon Sagl"
     careOf = "c/o Beat Bachmann"
@@ -38,13 +48,6 @@ timeZone = "Europe/Zurich"
     uid = "CHE-108.532.459"
     vat = ""                              # MWST-Nummer, falls vorhanden, z.B. "CHE-108.532.459 MWST"
     responsible = "Beat Bachmann"         # verantwortlich für den Inhalt
-  # Bild, falls eine Seite kein eigenes "image" hat
-  defaultImage = "images/2021/03/ALLE-FLASCHEN-2048x1152.jpg"
-  # Karte und Routenlink (Startseite, Abschnitt "Besuch & Kontakt")
-  mapLink = "https://www.google.ch/maps/place/borghirolovini+Beat+Bachmann/@46.0070117,8.825935,17z/data=!3m1!4b1!4m5!3m4!1s0x4785d26f4ac478bd:0xf67c3b57fa03c3ba!8m2!3d46.007008!4d8.828129"
-  mapEmbed = "https://map.geo.admin.ch/embed.html?topic=ech&lang=de&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege,KML%7C%7Chttps:%2F%2Fpublic.geo.admin.ch%2Fj1RmnJGRTPOltLL9Xep4MQ&layers_visibility=false,false,false,false,true&layers_timestamp=18641231,,,,&X=96001.00&Y=707624.00&zoom=5"
-  # Altersabfrage beim ersten Besuch anzeigen
-  ageGate = true
 
   # Formulare (Kontakt + Bestellung) werden über web3forms.com per E-Mail zugestellt.
   # Access Key auf https://web3forms.com mit der Empfänger-Adresse erstellen und hier eintragen.
