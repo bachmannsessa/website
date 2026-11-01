@@ -3,7 +3,7 @@
 <head>
   {{- partial "head.html" . }}
 </head>
-<body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }}{{ if or (and .IsPage (strings.HasPrefix .TranslationKey "die-weine/")) (eq .Section "news") }} no-hero{{ end }}">
+<body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }}{{ if or .IsPage (eq .Section "news") }} no-hero{{ end }}">
   {{- partial "nav.html" . }}
   <main id="main">
     {{- block "main" . }}{{ end }}

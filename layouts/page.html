@@ -2,15 +2,30 @@
 {{- if strings.HasPrefix .TranslationKey "die-weine/" }}
 {{ partial "wine-page.html" . }}
 {{- else }}
-{{ partial "hero.html" (dict "page" .) }}
-<div class="block">
-  <article class="prose">{{ .Content }}</article>
-  {{- with .Parent }}{{ if and (not .IsHome) .RegularPages }}
-  <nav class="siblings" aria-label="{{ .Title }}">
-    <a class="siblings__parent" href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{- range .RegularPages.ByWeight }}<a href="{{ .RelPermalink }}"{{ if eq . $ }} aria-current="page"{{ end }}>{{ .LinkTitle }}</a>{{ end }}
-  </nav>
-  {{- end }}{{ end }}
-</div>
+{{- $i := partial "page-image.html" . }}
+{{- $parent := .Parent }}
+<article class="post">
+  <header class="post__head">
+    {{- if and $parent (not $parent.IsHome) }}
+    <a class="eyebrow post__back" href="{{ $parent.RelPermalink }}">← {{ $parent.Title }}</a>
+    {{- end }}
+    <h1>{{ .Title }}</h1>
+  </header>
+  <figure class="post__cover">
+    {{ partial "picture.html" (dict "src" $i.src "position" $i.position "sizes" "(max-width: 1140px) 100vw, 1100px" "loading" "eager" "alt" .Title) }}
+  </figure>
+  <div class="post__body prose">{{ .Content }}</div>
+</article>
+
+{{- if and $parent (not $parent.IsHome) }}
+{{- with where $parent.RegularPages.ByWeight "Permalink" "ne" .Permalink }}
+<nav class="post-nav" aria-label="{{ $parent.Title }}">
+  <div class="sec__inner">
+    <h2 class="post-nav__title">{{ T "moreIn" (dict "section" $parent.Title) }}</h2>
+    <div class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</div>
+  </div>
+</nav>
+{{- end }}
+{{- end }}
 {{- end }}
 {{ end }}

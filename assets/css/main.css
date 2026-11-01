@@ -419,3 +419,15 @@ h4 { font-size: 1.05rem; }
 .post-nav__all { text-align: center; margin: 48px 0 0; }
 @media (max-width: 640px) { .post-nav__cards { grid-template-columns: 1fr; } .post-nav__cards > div:last-child:not(:only-child) { text-align: left; } }
 .sec--years { padding-top: 0; }
+
+/* =================================================================
+   Content pages + sections
+   ================================================================= */
+.post__head .post__back + h1 { margin-top: 14px; }
+section ~ .post__body, .hero + .post__body { padding-top: clamp(40px, 6vw, 72px); }
+.post-nav__title { font-size: 1.4rem; margin: 0 0 8px; }
+.sec--cards { padding-block: clamp(48px, 7vw, 88px); }
+.cards { margin-top: 24px; }
+.card { display: flex; flex-direction: column; }
+.card__body p { margin: 6px 0 0; font-size: .88rem; line-height: 1.55; color: var(--muted); }
+.siblings { display: none; }

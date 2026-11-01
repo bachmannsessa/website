@@ -1,8 +1,9 @@
-{{- /* teaser card for a page */ -}}
-<a class="card" href="{{ .RelPermalink }}">
-  {{- $i := partial "page-image.html" . }}
+{{- /* teaser card for a page: photo, title, first lines */ -}}
+{{- $i := partial "page-image.html" . -}}
+<a class="card reveal" href="{{ .RelPermalink }}">
   <div class="card__img">{{ partial "picture.html" (dict "src" $i.src "sizes" "(max-width: 600px) 100vw, 360px" "widths" (slice 480 960) "position" $i.position) }}</div>
   <div class="card__body">
     <h3>{{ .LinkTitle }}</h3>
+    {{- with partial "lead.html" . }}<p>{{ . | truncate 130 }}</p>{{ end }}
   </div>
 </a>
