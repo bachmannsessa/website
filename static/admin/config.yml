@@ -4,7 +4,7 @@
 
 backend:
   name: github
-  repo: GITHUB_USER/REPO_NAME   # TODO: echten Repo-Namen eintragen, z.B. aurelio/bachmannsessa-homepage
+  repo: bachmannsessa/website
   branch: main
   commit_messages:
     create: "Neu: {{collection}} „{{slug}}“"
