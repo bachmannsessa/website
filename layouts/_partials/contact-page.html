@@ -10,6 +10,8 @@
         <strong>{{ site.Title }}</strong><br>
         {{ site.Params.owner }}<br>
         {{ site.Params.address | replaceRE " · " "<br>" | safeHTML }}
+        {{- with site.Params.email }}<br><a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+        {{- with site.Params.phone }}<br><a href="tel:{{ replace . " " "" }}">{{ . }}</a>{{ end }}
       </address>
       {{- with site.Params.mapLink }}<p><a class="btn btn--ghost" href="{{ . }}" target="_blank" rel="noopener">{{ T "route" }}</a></p>{{ end }}
       {{- with site.Params.mapEmbed }}<iframe class="contact__map" src="{{ . }}" title="{{ T "route" }}" loading="lazy"></iframe>{{ end }}

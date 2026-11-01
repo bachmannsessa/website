@@ -73,5 +73,8 @@
     </div>
     <label class="check"><input type="checkbox" name="AGB_und_18_Jahre" value="ja" required> {{ T "acceptTerms" }}</label>
   </fieldset>
+  {{- with partial "page-by-key.html" "datenschutz" }}
+  <p class="form__legal">{{ T "privacyNote" (dict "url" .RelPermalink) | safeHTML }}</p>
+  {{- end }}
   <button class="btn" type="submit">{{ T "order" }}</button>
 </form>

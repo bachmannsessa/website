@@ -20,8 +20,24 @@ timeZone = "Europe/Zurich"
   quality = 80
 
 [params]
-  owner = "Beat Bachmann"
-  address = "Borghirolo · 6997 Sessa"
+  # ── Kontakt- und Firmendaten ────────────────────────────────────────────
+  # Werden auf der ganzen Website verwendet (Fusszeile, Kontakt, Startseite,
+  # Impressum, Datenschutzerklärung). Siehe README → "Firmen- und Kontaktdaten".
+  owner = "Beat Bachmann"                 # Name, wie er auf der Website erscheint
+  address = "Borghirolo · 6997 Sessa"     # Kurzadresse (Zeilen mit " · " getrennt)
+  email = "vino@bachmannsessa.ch"
+  phone = ""                              # optional, z.B. "+41 79 123 45 67"
+  [params.company]                        # rechtliche Angaben (Impressum)
+    name = "Vicon Sagl"
+    careOf = "c/o Beat Bachmann"
+    street = "Borghirolo"
+    zip = "6997"
+    city = "Sessa"
+    country = "Schweiz"
+    seat = "Tresa TI"                     # Sitz laut Handelsregister
+    uid = "CHE-108.532.459"
+    vat = ""                              # MWST-Nummer, falls vorhanden, z.B. "CHE-108.532.459 MWST"
+    responsible = "Beat Bachmann"         # verantwortlich für den Inhalt
   # Bild, falls eine Seite kein eigenes "image" hat
   defaultImage = "images/2021/03/ALLE-FLASCHEN-2048x1152.jpg"
   # Karte und Routenlink (Startseite, Abschnitt "Besuch & Kontakt")

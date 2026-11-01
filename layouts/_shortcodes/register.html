@@ -1,0 +1,9 @@
+{{- /* Handelsregister-Angaben aus hugo.toml → params.company */ -}}
+{{- with site.Params.company -}}
+<p>
+  {{ T "legalRegisterName" }}<br>
+  {{ T "legalSeat" }}: {{ .seat }}<br>
+  {{ T "legalUid" }}: {{ .uid }}
+  {{- with .vat }}<br>{{ T "legalVat" }}: {{ . }}{{ end }}
+</p>
+{{- end -}}

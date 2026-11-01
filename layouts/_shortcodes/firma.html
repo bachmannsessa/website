@@ -1,0 +1,12 @@
+{{- /* Firmenangaben aus hugo.toml → params.company (für Impressum/Datenschutz) */ -}}
+{{- with site.Params.company -}}
+<p class="legal-address">
+  <strong>{{ .name }}</strong><br>
+  {{ with .careOf }}{{ . }}<br>{{ end }}
+  {{ .street }}<br>
+  {{ .zip }} {{ .city }}<br>
+  {{ if eq site.Language.Lang "it" }}Svizzera{{ else }}{{ .country }}{{ end }}<br>
+  {{ with site.Params.email }}{{ T "email" }}: <a href="mailto:{{ . }}">{{ . }}</a><br>{{ end }}
+  {{ with site.Params.phone }}{{ T "phone" }}: <a href="tel:{{ replace . " " "" }}">{{ . }}</a>{{ end }}
+</p>
+{{- end -}}

@@ -24,6 +24,33 @@ hugo --gc --minify           # production build into ./public
 | `i18n/` | UI strings DE/IT. |
 | `hugo.toml` | Config, menus, form settings. |
 
+## Firmen- und Kontaktdaten (company & contact data)
+
+**All company/contact data lives in one place: `hugo.toml` → `[params]` and `[params.company]`.**
+Change it there and the whole site updates: footer, contact page, "Besuch & Kontakt" on the start
+page, Impressum and Datenschutzerklärung (via the shortcodes `firma`, `register`, `email`).
+
+| Key | Used for | Current value |
+|-----|----------|---------------|
+| `owner` | name shown in footer/contact | Beat Bachmann |
+| `address` | short address (lines separated by ` · `) | Borghirolo · 6997 Sessa |
+| `email` | footer, contact, Impressum, Datenschutz | vino@bachmannsessa.ch |
+| `phone` | optional, shown everywhere the email is shown if set | *(empty)* |
+| `company.name`, `careOf`, `street`, `zip`, `city`, `country` | legal entity (Impressum, Datenschutz) | Vicon Sagl, c/o Beat Bachmann, Borghirolo, 6997 Sessa |
+| `company.seat` | registered seat | Tresa TI |
+| `company.uid` | UID number | CHE-108.532.459 |
+| `company.vat` | VAT number, optional (shown if set) | *(empty)* |
+| `company.responsible` | "Verantwortlich für den Inhalt" | Beat Bachmann |
+
+Company data as entered in the commercial register (checked 2026-11-01). The register name ("Handelsregister des Kantons Tessin" /
+"Registro di commercio del Cantone Ticino") is in `i18n/*.yaml` → `legalRegisterName`.
+
+Legal page texts (draft, not legal advice – have them checked):
+- Impressum: `content/de/impressum.md`, `content/it/note-legali.md`
+- Datenschutzerklärung: `content/de/datenschutz.md`, `content/it/privacy.md`
+  → update the text if services change (hosting, form provider, map, new tracking …) and adjust
+  the "Stand" date at the bottom.
+
 ## Photos
 
 Every page sets its photo in the front matter: `image: "/images/…"` (file in `assets/images/…`),

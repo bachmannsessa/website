@@ -119,6 +119,8 @@
         <strong>{{ site.Title }}</strong><br>
         {{ site.Params.owner }}<br>
         {{ site.Params.address | replaceRE " · " "<br>" | safeHTML }}
+        {{- with site.Params.email }}<br><a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+        {{- with site.Params.phone }}<br><a href="tel:{{ replace . " " "" }}">{{ . }}</a>{{ end }}
       </address>
       <p class="visit__actions">
         {{- with partial "page-by-key.html" "kontakt" }}<a class="btn" href="{{ .RelPermalink }}">{{ T "contactForm" }}</a>{{ end }}

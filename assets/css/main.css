@@ -528,3 +528,8 @@ section ~ .post__body, .hero + .post__body { padding-top: clamp(40px, 6vw, 72px)
   .order__total-foot small { font-size: .72rem; }
   .order__total-foot .info { display: none; }
 }
+
+/* legal pages + form note */
+.legal-address { line-height: 1.8; }
+.form__legal { font-size: .8rem; color: var(--muted); margin: 0 0 14px; }
+.footer__small a { color: inherit; text-decoration: underline; }
