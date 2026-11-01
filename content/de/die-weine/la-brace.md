@@ -16,7 +16,7 @@ Maréchal Foch (10 – 20 %)
 
 ### Weinbeschreibung
 
-Dunkelroter Wein, intensiv aromatisch, weich, dicht (stoffig) und harmonisch. Moderate Säure. Idealer Begleiter zu Grilladen oder exotischen Gerichten, seine aussergewöhnlich kräftige und meist mehr oder weniger stark nach Rosen duftende Aromatik erträgt auch kräftig gewürzte Spesen sehr gut.
+Dunkelroter Wein, intensiv aromatisch, weich, dicht (stoffig) und harmonisch. Moderate Säure. Idealer Begleiter zu Grilladen oder exotischen Gerichten, seine aussergewöhnlich kräftige und meist mehr oder weniger stark nach Rosen duftende Aromatik erträgt auch kräftig gewürzte Speisen sehr gut.
 
 ### Vinifikation
 
@@ -24,4 +24,4 @@ Dunkelroter Wein, intensiv aromatisch, weich, dicht (stoffig) und harmonisch. Mo
 
 ### Trinken
 
-frisch abgefüllt erfreut er der Wein mit seiner jugendlich-blumigen (Rosen-)Aromatik, nach ein bis zwei Jahren in der Flasche erfreut er mit seinem südländisch temperamentvollen Charme.
+frisch abgefüllt erfreut der Wein mit seiner jugendlich-blumigen (Rosen-)Aromatik, nach ein bis zwei Jahren in der Flasche erfreut er mit seinem südländisch temperamentvollen Charme.

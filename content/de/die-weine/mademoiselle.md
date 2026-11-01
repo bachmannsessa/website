@@ -14,7 +14,7 @@ Chambourcin
 
 ### Weinbeschreibung
 
-Attraktives Farbenspiel zwischen Orange und Rosa, in der Nase gefolgt vom Duft einer Natur-Blumenwiese, Blüten- und Kräuteraromen, sie sich im Gaumen wiederfinden und dank der präsenten Säure lange nachklingen
+Attraktives Farbenspiel zwischen Orange und Rosa, in der Nase gefolgt vom Duft einer Natur-Blumenwiese, Blüten- und Kräuteraromen, die sich im Gaumen wiederfinden und dank der präsenten Säure lange nachklingen
 
 ### Vinifikation
 

@@ -8,7 +8,7 @@ imagePosition: "50% 70%"
 ---
 ### Rebsorte
 
-Sortenrein ausgebauter Wein aus der spätreifen «PIWI-Sorte» Chambourcin. Die **pi**lz**wi**derstandsfähige (PIWI) Rebsorte, angebaut in der Lage «Cavezze» benötigt in der Regel keine Fungidzide. Insektizide wende ich im ganzen Rebareal keine an, also ist der «Chamboursin», wie der – ebenfalls aus PIWI-Sorten (Maréchal Foch und Cabernet Jura) gekelterte «LA BRACE» ein Biowein.
+Sortenrein ausgebauter Wein aus der spätreifen «PIWI-Sorte» Chambourcin. Die **pi**lz**wi**derstandsfähige (PIWI) Rebsorte, angebaut in der Lage «Cavezze» benötigt in der Regel keine Fungizide. Insektizide wende ich im ganzen Rebareal keine an, also ist der «Chamboursin», wie der – ebenfalls aus PIWI-Sorten (Maréchal Foch und Cabernet Jura) gekelterte «LA BRACE» ein Biowein.
 
 ### Weinbeschreibung
 
