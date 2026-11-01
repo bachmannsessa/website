@@ -117,12 +117,7 @@
     </div>
     <div class="news-cards">
       {{- range first 3 .RegularPages.ByDate.Reverse }}
-      <a class="news-card reveal" href="{{ .RelPermalink }}">
-        <div class="news-card__img">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 380px" "widths" (slice 480 960) "position" (partial "page-image.html" .).position) }}</div>
-        <p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
-        <h3>{{ .Title }}</h3>
-        <p>{{ .Summary | plainify | htmlUnescape | truncate 180 }}</p>
-      </a>
+      {{ partial "news-card.html" . }}
       {{- end }}
     </div>
   </div>

@@ -1,28 +1,45 @@
 {{ define "main" }}
-{{- $pager := .Paginate .RegularPages.ByDate.Reverse }}
-{{- $hero := dict "page" . }}
-{{- if not .Params.image }}{{ range first 1 .RegularPages.ByDate.Reverse }}{{ $i := partial "page-image.html" . }}{{ $hero = merge $hero (dict "image" $i.src "position" $i.position) }}{{ end }}{{ end }}
-{{ partial "hero.html" $hero }}
-<div class="block">
-  {{- with .Content }}<div class="prose">{{ . }}</div>{{ end }}
-  <div class="news-list">
-  {{- range $pager.Pages }}
-    <article class="news-item">
-      <a class="news-item__img" href="{{ .RelPermalink }}" tabindex="-1">{{ $i := partial "page-image.html" . }}{{ partial "picture.html" (dict "src" $i.src "sizes" "(max-width: 700px) 100vw, 320px" "widths" (slice 480 960) "position" $i.position) }}</a>
-      <div class="news-item__text">
-        <p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <p>{{ .Summary | plainify | truncate 300 }}</p>
+{{- $posts := .RegularPages.ByDate.Reverse }}
+<header class="page-head">
+  <div class="page-head__inner">
+    <p class="eyebrow">{{ site.Title }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="lead">{{ with .Description }}{{ . }}{{ else }}{{ T "newsIntro" }}{{ end }}</p>
+    {{- $years := slice }}
+    {{- range (after 1 $posts).GroupByDate "2006" }}{{ $years = $years | append .Key }}{{ end }}
+    <nav class="year-nav" aria-label="{{ T "years" }}">
+      {{- range $years }}<a href="#y{{ . }}">{{ . }}</a>{{ end }}
+    </nav>
+  </div>
+</header>
+
+{{- /* latest post, large */}}
+{{- range first 1 $posts }}
+{{- $i := partial "page-image.html" . }}
+<section class="sec sec--tight">
+  <a class="sec__inner news-feature reveal" href="{{ .RelPermalink }}">
+    <div class="news-feature__img">{{ partial "picture.html" (dict "src" $i.src "position" $i.position "sizes" "(max-width: 800px) 100vw, 660px" "loading" "eager") }}</div>
+    <div class="news-feature__text">
+      <p class="eyebrow">{{ T "latestNews" }} · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Summary | plainify | htmlUnescape | truncate 320 }}</p>
+      <span class="link-arrow">{{ T "readMore" }}</span>
+    </div>
+  </a>
+</section>
+{{- end }}
+
+{{- /* all other posts by year */}}
+<div class="sec sec--tight sec--years">
+  <div class="sec__inner">
+  {{- range (after 1 $posts).GroupByDate "2006" }}
+    <section class="news-year" id="y{{ .Key }}">
+      <h2 class="news-year__title">{{ .Key }}</h2>
+      <div class="news-cards">
+        {{- range .Pages }}{{ partial "news-card.html" . }}{{ end }}
       </div>
-    </article>
+    </section>
   {{- end }}
   </div>
-  {{- if gt $pager.TotalPages 1 }}
-  <nav class="pager">
-    {{- with $pager.Prev }}<a href="{{ .URL }}">← {{ T "newer" }}</a>{{ end }}
-    <span>{{ $pager.PageNumber }} / {{ $pager.TotalPages }}</span>
-    {{- with $pager.Next }}<a href="{{ .URL }}">{{ T "older" }} →</a>{{ end }}
-  </nav>
-  {{- end }}
 </div>
 {{ end }}

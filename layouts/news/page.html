@@ -1,11 +1,28 @@
 {{ define "main" }}
-{{ partial "hero.html" (dict "page" . "subtitle" (.Date | time.Format ":date_long")) }}
-<div class="block">
-  <article class="prose">{{ .Content }}</article>
-  <nav class="pager">
-    {{- with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ else }}<span></span>{{ end }}
-    <a href="{{ .Parent.RelPermalink }}">{{ T "allNews" }}</a>
-    {{- with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ else }}<span></span>{{ end }}
-  </nav>
-</div>
+{{- $i := partial "page-image.html" . }}
+<article class="post">
+  <header class="post__head">
+    <a class="eyebrow post__back" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+    <p class="post__date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <figure class="post__cover">
+    {{ partial "picture.html" (dict "src" $i.src "position" $i.position "sizes" "(max-width: 1140px) 100vw, 1100px" "loading" "eager" "alt" .Title) }}
+  </figure>
+  <div class="post__body prose">{{ .Content }}</div>
+</article>
+
+<nav class="post-nav" aria-label="{{ T "allNews" }}">
+  <div class="post-nav__inner">
+    <div class="post-nav__cards">
+      {{- with .NextInSection }}
+      <div><p class="eyebrow">← {{ T "newer" }}</p>{{ partial "news-card.html" . }}</div>
+      {{- end }}
+      {{- with .PrevInSection }}
+      <div><p class="eyebrow">{{ T "older" }} →</p>{{ partial "news-card.html" . }}</div>
+      {{- end }}
+    </div>
+    <p class="post-nav__all"><a class="btn btn--ghost" href="{{ .Parent.RelPermalink }}">{{ T "allNews" }}</a></p>
+  </div>
+</nav>
 {{ end }}
