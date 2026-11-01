@@ -3,7 +3,6 @@ title: "Sauvignon Blanc"
 date: "2017-08-27T19:26:53+02:00"
 translationKey: "rebsorten/sauvignon-blanc"
 weight: 7
-image: "/images/2017/08/WP_20170827_11_19_18_Proklein.jpg"
 ---
 La vite Sauvignon Blanc proviene probabilmente dalla regione Loira o da sud ovest della Francia ed è nata da un incrocio naturale delle viti Traminer e Chenin Blanc. Dopo la Chardonnay e insieme al Riesling, quest’uva appartiene alla categoria di vini bianchi più famosi e amati al mondo.\
 La Sauvignon Blanc è stata documentata la prima volta nel 18° secolo e in realtà solo dopo la seconda metà del secolo scorso ha acquistato importanza.\
