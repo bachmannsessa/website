@@ -98,6 +98,14 @@ document.querySelectorAll('form[data-order]').forEach((form) => {
     const s = orderSummary(form);
     form.querySelector('[data-total]').textContent = chf(s.total);
     form.querySelector('[data-bottles]').textContent = s.bottles;
+    form.querySelector('[data-bottles-label]').textContent = s.bottles === 1 ? form.dataset.bottleOne : form.dataset.bottleOther;
+    // Kartons à 6 Flaschen; Hinweis, wenn der letzte Karton nicht voll ist
+    const boxes = Math.ceil(s.bottles / 6), missing = boxes * 6 - s.bottles;
+    form.querySelector('[data-boxes]').textContent = boxes;
+    form.querySelector('[data-boxes-label]').textContent = boxes === 1 ? form.dataset.boxOne : form.dataset.boxOther;
+    const warn = form.querySelector('[data-box-warn]');
+    warn.hidden = !(s.bottles && missing);
+    warn.textContent = (missing === 1 ? form.dataset.boxWarnOne : form.dataset.boxWarnOther).replace('{n}', missing);
     form.querySelector('[data-cart-empty]')?.toggleAttribute('hidden', s.bottles > 0);
   };
   form.addEventListener('input', () => {
@@ -128,7 +136,10 @@ document.querySelectorAll('form[data-ajax]').forEach((form) => {
       const s = orderSummary(form);
       if (!s.bottles) { show(form.dataset.msgEmpty, false); return; }
       form.elements['Bestellung'].value = s.lines.join('\n');
-      form.elements['Total'].value = `${chf(s.total)} (${s.bottles} Flaschen, zzgl. Porto CHF ${form.dataset.shipping}/6er-Karton bei Versand)`;
+      const boxes = Math.ceil(s.bottles / 6), missing = boxes * 6 - s.bottles;
+      form.elements['Total'].value = `${chf(s.total)} (${s.bottles} Flaschen = ${boxes} Karton${boxes === 1 ? '' : 's'}`
+        + (missing ? `, letzter Karton nicht voll: ${6 - missing} von 6` : '')
+        + `; zzgl. Porto CHF ${form.dataset.shipping}/6er-Karton bei Versand)`;
     }
     const btn = form.querySelector('[type=submit]');
     btn.disabled = true; show(form.dataset.msgSending, true);

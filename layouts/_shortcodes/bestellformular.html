@@ -2,7 +2,9 @@
 {{- $d := hugo.Data.weine -}}
 <form class="form order" method="post" action="{{ site.Params.forms.endpoint }}" data-ajax data-order
       data-msg-sending="{{ T "sending" }}" data-msg-sent="{{ T "orderSent" }}" data-msg-error="{{ T "sendError" }}"
-      data-msg-empty="{{ T "orderEmpty" }}" data-shipping="{{ $d.versand_pro_karton }}">
+      data-msg-empty="{{ T "orderEmpty" }}" data-shipping="{{ $d.versand_pro_karton }}"
+      data-bottle-one="{{ T "bottleOne" }}" data-bottle-other="{{ T "bottles" }}" data-box-one="{{ T "boxOne" }}" data-box-other="{{ T "boxOther" }}"
+      data-box-warn-one="{{ T "boxWarnOne" }}" data-box-warn-other="{{ T "boxWarnOther" }}">
   {{ partial "form-hidden.html" (dict "subject" (T "orderSubject")) }}
   <p class="form__hint" data-cart-empty hidden>{{ T "cartEmpty" }}</p>
   <input type="hidden" name="Bestellung" value="">
@@ -42,7 +44,8 @@
   {{- end }}
 
   <div class="order__total">
-    <span>{{ T "total" }}: <strong data-total>CHF 0.00</strong> (<span data-bottles>0</span> {{ T "bottles" }})</span>
+    <span>{{ T "total" }}: <strong data-total>CHF 0.00</strong> (<span data-bottles>0</span> <span data-bottles-label>{{ T "bottles" }}</span> · <span data-boxes>0</span> <span data-boxes-label>{{ T "boxOther" }}</span>)</span>
+    <small class="order__box-warn" data-box-warn hidden></small>
     <small>{{ T "shippingNote" (dict "amount" $d.versand_pro_karton) }}</small>
   </div>
 

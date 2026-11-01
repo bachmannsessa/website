@@ -71,3 +71,8 @@ cartEmpty: "Ihre Bestellung ist noch leer – wählen Sie unten die gewünschten
 less: "weniger"
 more: "mehr"
 addBox: "+ 1 Karton (6)"
+boxOne: "Karton"
+boxOther: "Kartons"
+boxWarnOne: "Noch 1 Flasche bis zum vollen Karton – idealerweise bestellen Sie volle 6er-Kartons."
+boxWarnOther: "Noch {n} Flaschen bis zum vollen Karton – idealerweise bestellen Sie volle 6er-Kartons."
+bottleOne: "Flasche"

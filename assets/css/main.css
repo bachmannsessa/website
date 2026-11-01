@@ -508,3 +508,6 @@ section ~ .post__body, .hero + .post__body { padding-top: clamp(40px, 6vw, 72px)
 .post-nav .cards--balanced { margin-top: 0; }
 @media (max-width: 900px) { .cards--balanced { --cols: 2 !important; } }
 @media (max-width: 520px) { .cards--balanced { --cols: 1 !important; } }
+.order__box-warn { display: block; margin: 2px 0; padding: 6px 10px; border-radius: 6px; background: rgb(255 255 255 / .14); font-weight: 600; }
+.order__box-warn::before { content: "⚠︎ "; }
+.order__box-warn[hidden] { display: none; }

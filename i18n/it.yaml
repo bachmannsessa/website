@@ -68,3 +68,8 @@ cartEmpty: "La sua ordinazione è ancora vuota – scelga qui sotto i vini desid
 less: "meno"
 more: "più"
 addBox: "+ 1 cartone (6)"
+boxOne: "cartone"
+boxOther: "cartoni"
+boxWarnOne: "Manca 1 bottiglia per completare il cartone – idealmente ordini cartoni completi da 6."
+boxWarnOther: "Mancano {n} bottiglie per completare il cartone – idealmente ordini cartoni completi da 6."
+bottleOne: "bottiglia"
