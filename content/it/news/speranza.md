@@ -2,7 +2,6 @@
 title: "Speranza"
 date: "2021-02-10T21:07:58+01:00"
 translationKey: "news/hoffnung"
-image: "/images/2020/06/WP_20171029_17_32_27_Pro-2048x1153.jpg"
 ---
 Dopo quasi un anno di “Coronavirus” la speranza adesso è grande, che fra poco la vita nel 2021 possa tornare nuovamente “normale”. Non la nuova normalità, bensì quella che abbiamo avuto fino a prima di un anno fa.
 

@@ -2,7 +2,6 @@
 title: "vendemmiata!"
 date: "2018-10-10T18:14:28+02:00"
 translationKey: "news/geerntet"
-image: "/images/2018/10/WP_20180922_17_45_48_Rich-e1539187010766.jpg"
 ---
 Grazie al tanto apprezzato aiuto delle vendemmiatrici e dei vendemmiatori, il raccolto del 2018 ormai è in cantina. Un grazie di cuore a tutte queste care persone.
 

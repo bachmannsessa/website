@@ -5,7 +5,7 @@
 
 {{- /* 1 ─ Hero */}}
 <header class="hero hero--large">
-  {{ partial "picture.html" (dict "src" ($p.image | default site.Params.defaultImage) "sizes" "100vw" "class" "hero__img" "loading" "eager" "position" $p.imagePosition) }}
+  {{ $i := partial "page-image.html" . }}{{ partial "picture.html" (dict "src" $i.src "sizes" "100vw" "class" "hero__img" "loading" "eager" "position" $i.position) }}
   <div class="hero__text">
     <h1>{{ site.Title }}</h1>
     {{- with $p.tagline }}<p class="hero__sub">{{ . }}</p>{{ end }}
@@ -21,7 +21,7 @@
 {{- with partial "page-by-key.html" "geschichte/der-winzer" }}
 <section class="sec" id="winzer">
   <div class="sec__inner split">
-    <div class="split__media reveal">{{ partial "picture.html" (dict "src" .Params.image "sizes" "(max-width: 800px) 100vw, 560px" "position" .Params.imagePosition) }}</div>
+    <div class="split__media reveal">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 560px" "position" (partial "page-image.html" .).position) }}</div>
     <div class="split__text reveal">
       <p class="eyebrow">{{ .Title }}</p>
       <h2>{{ $p.winzerTitle | default .Title }}</h2>
@@ -58,7 +58,7 @@
       {{- range .RegularPages.ByWeight }}
       {{- $d := index $prices .File.ContentBaseName }}
       <a class="wine reveal" href="{{ .RelPermalink }}">
-        <div class="wine__img">{{ partial "picture.html" (dict "src" .Params.image "sizes" "(max-width: 700px) 70vw, 280px" "widths" (slice 480 960) "position" "50% 55%") }}</div>
+        <div class="wine__img">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 700px) 70vw, 280px" "widths" (slice 480 960) "position" "50% 55%") }}</div>
         <div class="wine__body">
           <h3>{{ .Title }}</h3>
           {{- with $d }}
@@ -84,7 +84,7 @@
   <div class="sec__inner">
     {{- range $i, $s := slice $boden $reben }}{{ with $s }}
     <div class="split{{ if $i }} split--reverse{{ end }}">
-      <div class="split__media reveal">{{ partial "picture.html" (dict "src" .Params.image "sizes" "(max-width: 800px) 100vw, 560px" "position" .Params.imagePosition) }}</div>
+      <div class="split__media reveal">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 560px" "position" (partial "page-image.html" .).position) }}</div>
       <div class="split__text reveal">
         <p class="eyebrow">{{ T "terroir" }}</p>
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -99,7 +99,7 @@
 {{- /* 6 ─ Geschichte (Zitat) */}}
 {{- with partial "page-by-key.html" "geschichte" }}
 <section class="band">
-  {{ partial "picture.html" (dict "src" .Params.image "sizes" "100vw" "class" "band__img" "position" .Params.imagePosition) }}
+  {{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "100vw" "class" "band__img" "position" (partial "page-image.html" .).position) }}
   <div class="band__text reveal">
     {{- with $p.quote }}<blockquote>{{ . }}</blockquote>{{ end }}
     <a class="btn btn--light" href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -118,7 +118,7 @@
     <div class="news-cards">
       {{- range first 3 .RegularPages.ByDate.Reverse }}
       <a class="news-card reveal" href="{{ .RelPermalink }}">
-        <div class="news-card__img">{{ partial "picture.html" (dict "src" (.Params.image | default site.Params.defaultImage) "sizes" "(max-width: 800px) 100vw, 380px" "widths" (slice 480 960) "position" .Params.imagePosition) }}</div>
+        <div class="news-card__img">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 380px" "widths" (slice 480 960) "position" (partial "page-image.html" .).position) }}</div>
         <p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
         <h3>{{ .Title }}</h3>
         <p>{{ .Summary | plainify | htmlUnescape | truncate 180 }}</p>

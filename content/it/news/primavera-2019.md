@@ -2,7 +2,6 @@
 title: "Primavera 2019"
 date: "2019-04-17T12:21:27+02:00"
 translationKey: "news/fruehling-2019"
-image: "/images/2019/04/DSC_0172-e1554668746296.jpg"
 ---
 Dopo l’abbondante pioggia del 4 aprile e la grande nevicata nella Svizzera tedesca fino in pianura, si sono rotti i germogli delle viti ed è iniziato lo sviluppo della foglia. Le precipitazioni erano necessarie, perché nei mesi da dicembre 2018 fino a marzo 2019 sono caduti a Sessa solo 100 mm di pioggia.
 

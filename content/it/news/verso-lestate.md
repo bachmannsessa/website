@@ -2,7 +2,6 @@
 title: "Verso l’estate …"
 date: "2026-05-15T14:26:45+02:00"
 translationKey: "news/auf-dem-weg-in-den-sommer"
-image: "/images/2026/05/IMG_20260508_082157-scaled-e1778844983345-2048x1366.jpg"
 ---
 Le giornate primaverili soleggiate e piuttosto calde, insieme alle abbondanti piogge del mese di marzo, hanno spinto la natura a risvegliarsi in anticipo dal letargo invernale. Anche le viti hanno germogliato presto, facendo riaffiorare i ricordi cupi dell’annata gelida del 2017. Fortunatamente, l’ondata di aria fredda è arrivata solo a maggio e qui in Ticino le temperature non sono state più così basse da comportare un pericolo di gelate.
 

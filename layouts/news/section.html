@@ -1,14 +1,14 @@
 {{ define "main" }}
 {{- $pager := .Paginate .RegularPages.ByDate.Reverse }}
-{{- $img := .Params.image }}
-{{- if not $img }}{{ with first 1 .RegularPages.ByDate.Reverse }}{{ range . }}{{ $img = .Params.image }}{{ end }}{{ end }}{{ end }}
-{{ partial "hero.html" (dict "page" . "image" $img) }}
+{{- $hero := dict "page" . }}
+{{- if not .Params.image }}{{ range first 1 .RegularPages.ByDate.Reverse }}{{ $i := partial "page-image.html" . }}{{ $hero = merge $hero (dict "image" $i.src "position" $i.position) }}{{ end }}{{ end }}
+{{ partial "hero.html" $hero }}
 <div class="block">
   {{- with .Content }}<div class="prose">{{ . }}</div>{{ end }}
   <div class="news-list">
   {{- range $pager.Pages }}
     <article class="news-item">
-      <a class="news-item__img" href="{{ .RelPermalink }}" tabindex="-1">{{ partial "picture.html" (dict "src" (.Params.image | default site.Params.defaultImage) "sizes" "(max-width: 700px) 100vw, 320px" "widths" (slice 480 960)) }}</a>
+      <a class="news-item__img" href="{{ .RelPermalink }}" tabindex="-1">{{ $i := partial "page-image.html" . }}{{ partial "picture.html" (dict "src" $i.src "sizes" "(max-width: 700px) 100vw, 320px" "widths" (slice 480 960) "position" $i.position) }}</a>
       <div class="news-item__text">
         <p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>

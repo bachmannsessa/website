@@ -3,7 +3,6 @@ title: "Il Viticoltore"
 date: "2017-06-05T14:12:55+02:00"
 translationKey: "geschichte/der-winzer"
 weight: 1
-image: "/images/2016/01/beat.png"
 ---
 ### Da consulente a viticoltore
 

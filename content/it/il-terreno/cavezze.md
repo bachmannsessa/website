@@ -3,7 +3,6 @@ title: "Cavezze"
 date: "2017-06-05T14:21:03+02:00"
 translationKey: "die-boden/cavezze"
 weight: 12
-image: "/images/2016/01/WP_20160926_12_09_58_Rich-e1496431855897.jpg"
 aliases:
   - "/il-terreno/316-2/"
 ---

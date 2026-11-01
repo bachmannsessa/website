@@ -2,7 +2,6 @@
 title: "borghirolovini"
 translationKey: "home"
 tagline: "Vini da Sessa · Malcantone · Ticino"
-image: "/images/2020/06/DSC_0797-2048x1152.jpg"
 aliases:
   - "/borghirolovini/"
 winzerTitle: "Da consulente a viticoltore"

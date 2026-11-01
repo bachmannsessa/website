@@ -2,7 +2,6 @@
 title: "L’uva è in cantina"
 date: "2022-10-08T18:07:53+02:00"
 translationKey: "news/die-trauben-sind-im-keller"
-image: "/images/2022/10/DSC_0735-2048x1152.jpg"
 ---
 Le calde e soleggiate giornate di fine estate anche quest’anno ci hanno accompagnati durante la vendemmia. Fino all’ultimo giorno il 29 settembre, alla raccolta del Chambourcin, siamo stati sorpresi da una pioggia a catenelle. Come negli anni 2015, 2017 e 2020 l’uva era matura eccezionalmente in anticipo e grazie al fogliame sano è arrivata ad alti livelli di zucchero. La grandinata del 3 luglio 2022 ha causato comunque gravi danni al legno e al fogliame nei vigneti di Cavezze e di Ronco. Il grande stress subìto da queste vigne ha causato disturbi fisiologici (marciume del fusto, appassimento dell’uva, maturazione eterogenea degli acini). Le uve non erano state alimentate a sufficienza, in parte avevano un sapore\
 amaro, poche erano decisamente meno dolci. È stato necessario risolvere questi problemi. La vendemmia è stata più complessa in questi vigneti che negli altri meno colpiti (Borghirolo, Chioso, Secch e Valle).

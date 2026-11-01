@@ -3,7 +3,6 @@ title: "Chioso"
 date: "2017-06-05T14:21:55+02:00"
 translationKey: "die-boden/chioso"
 weight: 13
-image: "/images/2016/01/IMG_2136-e1496431912489.jpg"
 ---
 Circa 5.000 mq, Merlot, piantato 1984 e 2014, Cabernet Jura e poco di Completer, 2014
 

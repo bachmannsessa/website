@@ -2,7 +2,6 @@
 title: "Lavori invernali terminati"
 date: "2024-03-21T15:32:56+01:00"
 translationKey: "news/winterarbeiten-im-rebberg"
-image: "/images/2023/03/DSC_0910-2048x1152.jpg"
 ---
 **–** **e la primavera alle porte**
 

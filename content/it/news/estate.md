@@ -2,7 +2,6 @@
 title: "Estate!"
 date: "2022-07-06T23:21:11+02:00"
 translationKey: "news/sommer"
-image: "/images/2022/06/DSC_0634-1152x2048.jpg"
 ---
 **Estate!**
 

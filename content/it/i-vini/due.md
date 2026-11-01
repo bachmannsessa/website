@@ -3,8 +3,6 @@ title: "DUE"
 date: "2017-06-05T14:29:52+02:00"
 translationKey: "die-weine/due"
 weight: 3
-image: "/images/2020/10/DUE-1152x2048.jpg"
-imagePosition: "50% 70%"
 ---
 Cuvèe di Merlot e Cabernet-Sauvignon. Ugualmente maturato 18 mesi in barrique svizzere. Estremamente pieno di carattere, rosso speziato aromatico, che si adatta molto bene alla selvaggina, alla carne rossa, all’arrosto e al formaggio.
 

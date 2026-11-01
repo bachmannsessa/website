@@ -1,0 +1,17 @@
+{{- /*
+  Photo of a page: returns dict "src" + "position".
+  Order: own front matter "image" → translation in another language (German first,
+  languages sorted by weight) → site.Params.defaultImage.
+  "imagePosition" always comes from the same page as the photo.
+*/ -}}
+{{- $src := .Params.image -}}
+{{- $pos := .Params.imagePosition -}}
+{{- if not $src -}}
+  {{- range .Translations -}}
+    {{- if and (not $src) .Params.image -}}
+      {{- $src = .Params.image -}}
+      {{- $pos = .Params.imagePosition -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return dict "src" ($src | default site.Params.defaultImage) "position" $pos -}}

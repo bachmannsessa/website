@@ -24,6 +24,14 @@ hugo --gc --minify           # production build into ./public
 | `i18n/` | UI strings DE/IT. |
 | `hugo.toml` | Config, menus, form settings. |
 
+## Photos
+
+Every page sets its photo in the front matter: `image: "/images/…"` (file in `assets/images/…`),
+optionally `imagePosition: "50% 30%"` as focus point for crops.
+Italian pages without their own `image` automatically use the photo (and focus point) of their
+German translation – so normally set it only in the German file. The start page photo is in
+`content/de/_index.md`.
+
 ## Web editor (Sveltia CMS) – for writing news
 
 `/admin/` (e.g. https://bachmannsessa.ch/admin/) is a web editor for news posts and the wine

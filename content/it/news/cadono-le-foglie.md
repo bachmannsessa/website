@@ -2,7 +2,6 @@
 title: "Cadono le foglie"
 date: "2020-11-04T21:51:53+01:00"
 translationKey: "news/die-blaetter-fallen"
-image: "/images/2020/10/DSC_0001_BURST20201027123428396-1152x2048.jpg"
 ---
 L’uva ormai è raccolta e lavorata in cantina. Il nuovo vino ha ancora toni irregolari, ma un grande potenziale.
 

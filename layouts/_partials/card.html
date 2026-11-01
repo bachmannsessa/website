@@ -1,6 +1,7 @@
 {{- /* teaser card for a page */ -}}
 <a class="card" href="{{ .RelPermalink }}">
-  <div class="card__img">{{ partial "picture.html" (dict "src" (.Params.image | default site.Params.defaultImage) "sizes" "(max-width: 600px) 100vw, 360px" "widths" (slice 480 960) "position" .Params.imagePosition) }}</div>
+  {{- $i := partial "page-image.html" . }}
+  <div class="card__img">{{ partial "picture.html" (dict "src" $i.src "sizes" "(max-width: 600px) 100vw, 360px" "widths" (slice 480 960) "position" $i.position) }}</div>
   <div class="card__body">
     <h3>{{ .LinkTitle }}</h3>
   </div>

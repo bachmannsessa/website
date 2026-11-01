@@ -2,7 +2,6 @@
 title: "Primavera 2020"
 date: "2020-04-15T11:20:01+02:00"
 translationKey: "news/fruehling-2020"
-image: "/images/2020/04/DSC_0070-2048x1152.jpg"
 ---
 Le viti aspettano la prima vera pioggia primaverile.
 

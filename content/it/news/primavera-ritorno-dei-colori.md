@@ -2,7 +2,6 @@
 title: "Primavera – Il ritorno dei colori"
 date: "2025-04-02T19:42:02+02:00"
 translationKey: "news/fruehling-rueckkehr-der-farben"
-image: "/images/2023/03/DSC_0563-2048x1152.jpg"
 ---
 Da giorni gli uccelli hanno ricominciano il loro concerto mattutino e poi di nuovo al crepuscolo. Le cince e i fringuelli forti e presenti, più silenziosi e agitati i codirossi e i pettirossi. I merli gettano le basi, sostenuti dal tamburellare e dalle risate dei picchi. I cervi e i caprioli con il loro bramito delimitano il proprio territorio. In mezzo si sente il guaito delle volpi.
 

@@ -2,7 +2,6 @@
 title: "Novembre"
 date: "2025-11-19T01:29:44+01:00"
 translationKey: "news/november"
-image: "/images/2020/06/WP_20171019_15_50_54_Pro-2048x1153.jpg"
 ---
 Una corrente sudoccidentale ha posto fine alle belle e calde giornate di ottobre e novembre, ora che siamo a metà novembre, con pioggerellina, nebbia e rovesci temporaleschi. I prossimi giorni dovrebbero essere freddi, per la prima volta quest’inverno le temperature scenderanno probabilmente sotto lo zero. Nel vigneto non tutti i lavori autunnali sono stati completati. Spero che la neve arrivi solo tra qualche settimana.
 

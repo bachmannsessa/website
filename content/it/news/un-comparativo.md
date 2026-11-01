@@ -2,7 +2,6 @@
 title: "In salita"
 date: "2018-09-01T14:58:16+02:00"
 translationKey: "news/ein-steigerungslauf"
-image: "/images/2018/09/WP_20180901_14_08_14_Pro-e1535805883592.jpg"
 ---
 Cari Amici
 

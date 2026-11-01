@@ -2,7 +2,6 @@
 title: "la brace"
 date: "2017-06-05T15:35:01+02:00"
 translationKey: "news/la-brace-abgefuellt"
-image: "/images/2017/05/WP_20170504_20_44_22_Pro-e1496431425175.jpg"
 ---
 Cari Amici
 

@@ -2,7 +2,6 @@
 title: "Estate 2019 – Vigneti in condizioni di stress da asciutto"
 date: "2019-08-11T13:28:45+02:00"
 translationKey: "news/reben-im-trockenstress"
-image: "/images/2019/07/DSC_0321-e1564418587534.jpg"
 ---
 Il clima invernale secco si è esteso dalla primavera all’estate. Benché la lunga e attesa pioggia sia caduta in aprile (circa 190 mm, che è al di sopra della media in questo mese), sono seguiti tre mesi di sole e di molta siccità da maggio a luglio.
 

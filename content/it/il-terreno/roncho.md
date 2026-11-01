@@ -3,7 +3,6 @@ title: "Ronco"
 date: "2017-06-05T14:20:23+02:00"
 translationKey: "die-boden/roncho"
 weight: 11
-image: "/images/2017/06/WP_20170827_11_31_08_Pro-klein.jpg"
 ---
 Circa 2.000 mq, Cabernet-Sauvignon, piantato 1986/1991/2012
 
