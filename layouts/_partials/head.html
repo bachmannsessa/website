@@ -17,6 +17,7 @@
 {{- with resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 {{- end }}
+<script>document.documentElement.classList.add("js")</script>
 {{- if site.Params.ageGate }}
 <script>try{if(localStorage.getItem('ageOk')==='1')document.documentElement.classList.add('age-ok')}catch(e){}</script>
 {{- end }}

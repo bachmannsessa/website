@@ -1,0 +1,4 @@
+{{- /* Returns the page of the current language with the given translationKey (or nil). */ -}}
+{{- $p := "" -}}
+{{- with where site.Pages "TranslationKey" . }}{{ $p = index . 0 }}{{ end -}}
+{{- return $p -}}

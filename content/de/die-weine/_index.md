@@ -4,6 +4,7 @@ date: "2016-01-02T18:45:35+01:00"
 translationKey: "die-weine"
 weight: 5
 image: "/images/2021/03/ALLE-FLASCHEN-2048x1152.jpg"
+description: "«UNO», ein reiner Merlot, in zwei Varianten ausgebaut und der «DUE», eine Cuvée aus Merlot und Cabernet-Sauvignon werden ergänzt durch die biologisch produzierten Rotweine «la brace» (Rebsorten Maréchal Foch und Cabernet Jura) sowie dem «Chamboursin», beides kräftige aromatische «PIWI»-Weine."
 ---
 UNO, DUE, TRE – Sauvignon Blanc, Chamboursin und «la brace»
 

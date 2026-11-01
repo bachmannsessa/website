@@ -1,35 +1,154 @@
 {{ define "main" }}
-{{ partial "hero.html" (dict "page" . "title" site.Title "subtitle" (printf "%s · %s" site.Params.owner site.Params.address) "large" true) }}
+{{- $p := .Params }}
+{{- $order := partial "page-by-key.html" "bestellung" }}
+{{- $weine := partial "page-by-key.html" "die-weine" }}
 
-{{- with .Content }}
-<section class="block"><div class="prose">{{ . }}</div></section>
-{{- end }}
+{{- /* 1 ─ Hero */}}
+<header class="hero hero--large">
+  {{ partial "picture.html" (dict "src" ($p.image | default site.Params.defaultImage) "sizes" "100vw" "class" "hero__img" "loading" "eager" "position" $p.imagePosition) }}
+  <div class="hero__text">
+    <h1>{{ site.Title }}</h1>
+    {{- with $p.tagline }}<p class="hero__sub">{{ . }}</p>{{ end }}
+    <p class="hero__actions">
+      {{- with $weine }}<a class="btn btn--light" href="#weine">{{ .Title }}</a>{{ end }}
+      {{- with $order }}<a class="btn btn--outline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    </p>
+  </div>
+  <a class="hero__scroll" href="#winzer" aria-label="Scroll"></a>
+</header>
 
-{{- /* Aktuellster News-Beitrag, automatisch */}}
-{{- with site.GetPage "/news" }}
-{{- with first 1 .RegularPages.ByDate.Reverse }}{{ range . }}
-<section class="block block--news">
-  <p class="eyebrow">{{ T "latestNews" }} · {{ .Date | time.Format ":date_long" }}</p>
-  <article class="feature">
-    <div class="feature__img">{{ partial "picture.html" (dict "src" (.Params.image | default site.Params.defaultImage) "sizes" "(max-width: 800px) 100vw, 50vw") }}</div>
-    <div class="feature__text">
-      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      <p>{{ .Summary | plainify | truncate 400 }}</p>
-      <p><a class="btn" href="{{ .RelPermalink }}">{{ T "readMore" }}</a> <a class="link" href="{{ .Parent.RelPermalink }}">{{ T "allNews" }}</a></p>
+{{- /* 2 ─ Der Winzer */}}
+{{- with partial "page-by-key.html" "geschichte/der-winzer" }}
+<section class="sec" id="winzer">
+  <div class="sec__inner split">
+    <div class="split__media reveal">{{ partial "picture.html" (dict "src" .Params.image "sizes" "(max-width: 800px) 100vw, 560px" "position" .Params.imagePosition) }}</div>
+    <div class="split__text reveal">
+      <p class="eyebrow">{{ .Title }}</p>
+      <h2>{{ $p.winzerTitle | default .Title }}</h2>
+      <p class="lead">{{ partial "lead.html" . }}</p>
+      <a class="link-arrow" href="{{ .RelPermalink }}">{{ T "moreAbout" }}</a>
     </div>
-  </article>
+  </div>
 </section>
-{{- end }}{{ end }}
 {{- end }}
 
-{{- /* Weine-Übersicht */}}
-{{- with .Params.wineSection }}{{ with site.GetPage . }}
-<section class="block">
-  <h2 class="block__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-  <div class="cards">{{ range .RegularPages.ByWeight }}{{ partial "card.html" . }}{{ end }}</div>
-  {{- with $.Params.orderPage }}{{ with site.GetPage . }}
-  <p class="block__cta"><a class="btn btn--large" href="{{ .RelPermalink }}">{{ T "orderNow" }} →</a></p>
-  {{- end }}{{ end }}
+{{- /* 3 ─ Zahlen */}}
+{{- $boden := partial "page-by-key.html" "die-boden" }}
+{{- $reben := partial "page-by-key.html" "rebsorten" }}
+<section class="facts">
+  <div class="sec__inner facts__grid">
+    {{- range $p.facts }}<div class="fact reveal"><strong>{{ .value }}</strong><span>{{ .label }}</span></div>{{ end }}
+    {{- with $reben }}<div class="fact reveal"><strong>{{ len .RegularPages }}</strong><span>{{ .Title }}</span></div>{{ end }}
+    {{- with $boden }}<div class="fact reveal"><strong>{{ len .RegularPages }}</strong><span>{{ T "sites" }}</span></div>{{ end }}
+  </div>
 </section>
-{{- end }}{{ end }}
+
+{{- /* 4 ─ Die Weine */}}
+{{- with $weine }}
+{{- $prices := dict }}
+{{- range hugo.Data.weine.gruppen }}{{ range .weine }}{{ $prices = merge $prices (dict .id .) }}{{ end }}{{ end }}
+<section class="sec sec--dark" id="weine">
+  <div class="sec__inner">
+    <div class="sec__head reveal">
+      <p class="eyebrow">{{ T "ourWines" }}</p>
+      <h2>{{ .Title }}</h2>
+      <p class="lead">{{ partial "lead.html" . }}</p>
+    </div>
+    <div class="wines">
+      {{- range .RegularPages.ByWeight }}
+      {{- $d := index $prices .File.ContentBaseName }}
+      <a class="wine reveal" href="{{ .RelPermalink }}">
+        <div class="wine__img">{{ partial "picture.html" (dict "src" .Params.image "sizes" "(max-width: 700px) 70vw, 280px" "widths" (slice 480 960) "position" "50% 55%") }}</div>
+        <div class="wine__body">
+          <h3>{{ .Title }}</h3>
+          {{- with $d }}
+          <p class="wine__desc">{{ .beschreibung }}</p>
+          <p class="wine__price">{{ if .ausverkauft }}{{ T "soldOut" }}{{ else }}CHF {{ lang.FormatNumber 2 .preis }}{{ end }} <small>/ {{ .inhalt }}</small></p>
+          {{- end }}
+        </div>
+      </a>
+      {{- end }}
+    </div>
+    {{- with $order }}
+    <div class="sec__cta reveal">
+      <a class="btn btn--light btn--large" href="{{ .RelPermalink }}">{{ T "orderNow" }} →</a>
+      <p class="muted">{{ T "orderHint" }}</p>
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- /* 5 ─ Terroir: Böden + Rebsorten */}}
+<section class="sec" id="terroir">
+  <div class="sec__inner">
+    {{- range $i, $s := slice $boden $reben }}{{ with $s }}
+    <div class="split{{ if $i }} split--reverse{{ end }}">
+      <div class="split__media reveal">{{ partial "picture.html" (dict "src" .Params.image "sizes" "(max-width: 800px) 100vw, 560px" "position" .Params.imagePosition) }}</div>
+      <div class="split__text reveal">
+        <p class="eyebrow">{{ T "terroir" }}</p>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p>{{ partial "lead.html" . }}</p>
+        <ul class="chips">{{ range .RegularPages.ByWeight }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+      </div>
+    </div>
+    {{- end }}{{ end }}
+  </div>
+</section>
+
+{{- /* 6 ─ Geschichte (Zitat) */}}
+{{- with partial "page-by-key.html" "geschichte" }}
+<section class="band">
+  {{ partial "picture.html" (dict "src" .Params.image "sizes" "100vw" "class" "band__img" "position" .Params.imagePosition) }}
+  <div class="band__text reveal">
+    {{- with $p.quote }}<blockquote>{{ . }}</blockquote>{{ end }}
+    <a class="btn btn--light" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </div>
+</section>
+{{- end }}
+
+{{- /* 7 ─ News */}}
+{{- with site.GetPage "/news" }}
+<section class="sec" id="news">
+  <div class="sec__inner">
+    <div class="sec__head sec__head--row reveal">
+      <div><p class="eyebrow">{{ T "latestNews" }}</p><h2>{{ .Title }}</h2></div>
+      <a class="link-arrow" href="{{ .RelPermalink }}">{{ T "allNews" }}</a>
+    </div>
+    <div class="news-cards">
+      {{- range first 3 .RegularPages.ByDate.Reverse }}
+      <a class="news-card reveal" href="{{ .RelPermalink }}">
+        <div class="news-card__img">{{ partial "picture.html" (dict "src" (.Params.image | default site.Params.defaultImage) "sizes" "(max-width: 800px) 100vw, 380px" "widths" (slice 480 960) "position" .Params.imagePosition) }}</div>
+        <p class="eyebrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></p>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary | plainify | htmlUnescape | truncate 180 }}</p>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- /* 8 ─ Besuch & Kontakt */}}
+<section class="sec sec--tint" id="besuch">
+  <div class="sec__inner visit">
+    <div class="visit__text reveal">
+      <p class="eyebrow">{{ T "visitEyebrow" }}</p>
+      <h2>{{ T "visitTitle" }}</h2>
+      {{- with $p.visit }}<p>{{ . }}</p>{{ end }}
+      <address>
+        <strong>{{ site.Title }}</strong><br>
+        {{ site.Params.owner }}<br>
+        {{ site.Params.address | replaceRE " · " "<br>" | safeHTML }}
+      </address>
+      <p class="visit__actions">
+        {{- with partial "page-by-key.html" "kontakt" }}<a class="btn" href="{{ .RelPermalink }}">{{ T "contactForm" }}</a>{{ end }}
+        {{- with site.Params.mapLink }}<a class="btn btn--ghost" href="{{ . }}" target="_blank" rel="noopener">{{ T "route" }}</a>{{ end }}
+      </p>
+    </div>
+    {{- with site.Params.mapEmbed }}
+    <div class="visit__map reveal"><iframe src="{{ . }}" title="{{ T "visitTitle" }}" loading="lazy"></iframe></div>
+    {{- end }}
+  </div>
+</section>
 {{ end }}

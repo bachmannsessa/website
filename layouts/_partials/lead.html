@@ -1,0 +1,4 @@
+{{- /* Short plain-text lead for a page: front matter "description", else its first paragraph. */ -}}
+{{- $t := .Description -}}
+{{- if not $t }}{{ with findRE `(?s)<p>.*?</p>` .Content 1 }}{{ $t = index . 0 }}{{ end }}{{ end -}}
+{{- return ($t | plainify | htmlUnescape | truncate 420) -}}
