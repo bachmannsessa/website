@@ -9,22 +9,19 @@ imagePosition: "50% 70%"
 Eine Auslese erster Güte, rund 18 Monate in Schweizer Barrique ausgebaut.\
 Ein aussergewöhnlicher Merlot, der hervorragend zu Wild, dunklem Fleisch, Braten oder Käse passt. Er lässt sich aber auch einfach glasweise geniessen.
 
-### Rebsorten:
-
+### Rebsorten
 95 % Merlot, Sessa-Valle\
 5 % Cabernet-Sauvignon, Sessa-Roncho
 
-**Weinbeschreibung:**
+### Weinbeschreibung
 
 Dunkles kräftiges Rubinrot\
 Frische, würzige Nase, Fruchtaromen von Waldbeeren und einer Mischung aus Caramel, Bitterschokolade und leichten Holztönen\
 Körperreicher und würziger Geschmack, frische Säure und kompakte Gerbstoffe, nachhaltiger, langer Abgang
 
-### Vinifikation:
-
+### Vinifikation
 6 Monate Stahltank, 18 Monate Barrique
 
-### Trinken:
-
+### Trinken
 Heute dekantieren oder 2 Stunden vorher öffnen\
 Optimale Reife 2 bis 5 Jahre nach der Abfüllung

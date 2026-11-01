@@ -8,16 +8,20 @@ imagePosition: "50% 70%"
 ---
 Cuvée aus den interspezifischen Sorten Cabernet Jura und Maréchal Foch sowie Merlot (aus dem Weinberg Secch)
 
-**Rebsorten**\
+### Rebsorten
+
 Cabernet Jura (30 -60 %)\
 Merlot (30 – 40 %)\
 Maréchal Foch (10 – 20 %)
 
-**Weinbeschreibung**\
+### Weinbeschreibung
+
 Dunkelroter Wein, intensiv aromatisch, weich, dicht (stoffig) und harmonisch. Moderate Säure. Idealer Begleiter zu Grilladen oder exotischen Gerichten, seine aussergewöhnlich kräftige und meist mehr oder weniger stark nach Rosen duftende Aromatik erträgt auch kräftig gewürzte Spesen sehr gut.
 
-**Vinifikation**\
+### Vinifikation
+
 3 – 5 Monate Stahltank, 12 – 18 Monate vorbelegte Eichenbarriques
 
-**Trinken**\
+### Trinken
+
 frisch abgefüllt erfreut er der Wein mit seiner jugendlich-blumigen (Rosen-)Aromatik, nach ein bis zwei Jahren in der Flasche erfreut er mit seinem südländisch temperamentvollen Charme.

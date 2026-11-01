@@ -6,18 +6,14 @@ weight: 2
 ---
 Una selezione di prima qualità, maturato circa 18 mesi in barrique svizzere. Uno straordinario Merlot, l’eccellente con la selvaggina, la carne rossa, l’arrosto o il formaggio. Si può gustare anche al bicchiere.
 
-### Tipo:
-
+### Tipo
 95% Merlot, Sessa -Valle, 5% Cabernet-Sauvignon, Sessa-Borghirolo
 
-### Descrizione:
-
+### Descrizione
 rosso scuro rubino, fresco, speziato al naso, aromi di bacche di bosco e un misto di caramel, cioccolato fondente e una leggera tonalità di legno. Corposo, di sapore speziato, con acidità fresca e sostanze tanniche compatte, durevole con un lungo finale.
 
-### Vinificazione:
-
+### Vinificazione
 6 mesi in fusti d’acciaio, 16 mesi in barrique di quercia svizzera
 
-### Bere:
-
+### Bere
 travasare subito o aprire 2 ore prima di servire. Ottima maturazione da 2 a 5 anni

@@ -6,19 +6,15 @@ weight: 6
 ---
 Un vino bianco, vinificato senza residui zuccherini, splendente con un colore giallo-oro raggiante, deciso al naso o al palato con un fine aroma e l’acidità della vite Sauvignon Bianco.
 
-### Tipo:
-
+### Tipo
 Sauvignon Bianco\
 raramente con poco (< 10 %) di Completer
 
-### Descrizione:
-
+### Descrizione
 giallo-oro raggiante, aromatico tipico al naso. Sapore fresco, morbido, rotondo, aromatico, poca acidità.
 
-### Vinificazione:
-
+### Vinificazione
 6 – 9 mesi in fusti d’acciaio.
 
-### Bere:
-
+### Bere
 può essere bevuto giovane, fresco (tra 8 – 10 °C)

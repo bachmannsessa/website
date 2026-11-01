@@ -48,6 +48,17 @@ document.querySelectorAll('form[data-order]').forEach((form) => {
     form.querySelector('[data-bottles]').textContent = s.bottles;
   };
   form.addEventListener('input', update);
+  // ?wein=<id> (Button "Bestellen" auf der Weinseite): Wein mit 1 Flasche vorwählen
+  const pre = new URLSearchParams(location.search).get('wein');
+  const input = pre && form.querySelector(`input[data-id="${CSS.escape(pre)}"]`);
+  if (input) {
+    if (!input.value) input.value = 1;
+    const row = input.closest('.order__row');
+    row.classList.add('is-highlight');
+    setTimeout(() => row.classList.remove('is-highlight'), 2500);
+    row.scrollIntoView({ block: 'center' });
+    input.focus({ preventScroll: true });
+  }
   update();
 });
 

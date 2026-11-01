@@ -1,4 +1,7 @@
 {{ define "main" }}
+{{- if strings.HasPrefix .TranslationKey "die-weine/" }}
+{{ partial "wine-page.html" . }}
+{{- else }}
 {{ partial "hero.html" (dict "page" .) }}
 <div class="block">
   <article class="prose">{{ .Content }}</article>
@@ -9,4 +12,5 @@
   </nav>
   {{- end }}{{ end }}
 </div>
+{{- end }}
 {{ end }}

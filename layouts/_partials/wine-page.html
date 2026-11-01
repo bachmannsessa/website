@@ -1,0 +1,60 @@
+{{- /* Single wine page. Content = intro + "### " sections (Rebsorten, Weinbeschreibung, …) */ -}}
+{{- $id := .File.ContentBaseName }}
+{{- $lang := site.Language.Lang }}
+{{- $wine := dict }}{{ $group := "" }}
+{{- range hugo.Data.weine.gruppen }}{{ $g := . }}{{ range .weine }}{{ if eq .id $id }}{{ $wine = . }}{{ $group = index $g.titel $lang }}{{ end }}{{ end }}{{ end }}
+{{- $order := partial "page-by-key.html" "bestellung" }}
+
+{{- /* split content into intro and sections */}}
+{{- $parts := split (replace .Content "<h3" "§§<h3") "§§" }}
+{{- $intro := index $parts 0 }}
+{{- $sections := after 1 $parts }}
+{{- $img := partial "page-image.html" . }}
+
+<article class="wine-page">
+  <div class="wine-hero">
+    <div class="wine-hero__inner">
+      <div class="wine-hero__img">
+        {{ partial "picture.html" (dict "src" $img.src "sizes" "(max-width: 800px) 100vw, 480px" "widths" (slice 480 960 1600) "loading" "eager" "alt" .Title "position" "50% 60%") }}
+      </div>
+      <div class="wine-hero__text">
+        <a class="eyebrow wine-hero__back" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}{{ with $group }} · {{ . }}{{ end }}</a>
+        <h1>{{ .Title }}</h1>
+        {{- with $wine.beschreibung }}<p class="wine-hero__appellation">{{ . }}</p>{{ end }}
+        {{- with $wine }}
+        <div class="wine-hero__buy">
+          {{- if .ausverkauft }}
+          <p class="wine-hero__price">{{ T "soldOut" }}</p>
+          {{- else }}
+          <p class="wine-hero__price">CHF {{ lang.FormatNumber 2 .preis }} <small>/ {{ .inhalt }}</small></p>
+          {{- with $order }}<a class="btn" href="{{ .RelPermalink }}?wein={{ $id }}">{{ T "order" }}</a>{{ end }}
+          {{- end }}
+        </div>
+        {{- end }}
+        {{- with $intro | strings.TrimSpace }}<div class="wine-hero__intro prose">{{ . | safeHTML }}</div>{{ end }}
+        {{- with $sections }}
+        <div class="wine-details">
+          {{- range . }}
+          <section class="wine-detail">{{ . | safeHTML }}</section>
+          {{- end }}
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+
+
+  {{- with where .Parent.RegularPages.ByWeight "Permalink" "ne" .Permalink }}
+  <nav class="wine-others" aria-label="{{ T "otherWines" }}">
+    <h2>{{ T "otherWines" }}</h2>
+    <div class="wine-others__row">
+      {{- range . }}
+      <a class="wine-other" href="{{ .RelPermalink }}">
+        {{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "160px" "widths" (slice 480) "position" "50% 60%") }}
+        <span>{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </nav>
+  {{- end }}
+</article>

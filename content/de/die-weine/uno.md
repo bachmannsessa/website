@@ -10,20 +10,16 @@ Ausschliesslich aus Merlot vinifizierter, fruchtig aromatischer Merlot, meist ge
 
 Typische Fruchtaromatik, sie erinnert bei den Merlots an die hier wild wachsenden Himbeeren und Brombeeren.
 
-### Rebsorten:
-
+### Rebsorten
 100% Merlot aus den Lagen Chioso und Secch
 
-### Weinbeschreibung:
-
+### Weinbeschreibung
 Strahlendes Rubinrot\
 Frische, fruchtig-aromatische Nase, Fruchtaromen von Himbeeren, Erdbeeren, Zwetschgen\
 Körperreicher und würziger Geschmack, frische Säure, trotzdem weich und geschmeidig und schönem Abgang
 
-### Vinifikation:
-
+### Vinifikation
 12 Monate Stahltank, 2 – 6 Monate Barrique
 
-### Trinken:
-
+### Trinken
 Ist nach der Abfüllung sofort trinkreif, gewinnt aber mit der Lagerung sicher zwei bis drei Jahre an Qualität

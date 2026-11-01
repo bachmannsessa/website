@@ -18,7 +18,7 @@
       <div class="order__qty">
         {{- if .ausverkauft }}<em>{{ T "soldOut" }}</em>{{ else }}
         <input type="number" min="0" max="999" step="1" inputmode="numeric" placeholder="0" aria-label="{{ .name }} – {{ T "quantity" }}"
-               data-wine="{{ .name }}" data-price="{{ .preis }}" data-volume="{{ .inhalt }}">
+               data-id="{{ .id }}" data-wine="{{ .name }}" data-price="{{ .preis }}" data-volume="{{ .inhalt }}">
         {{- end }}
       </div>
     </div>

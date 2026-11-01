@@ -8,22 +8,18 @@ imagePosition: "50% 70%"
 ---
 Cuvée aus Merlot und Cabernet-Sauvignon. Ebenfalls rund 18 Monate im Barrique ausgebaut. Ein äusserst charaktervoller, würzig-aromatischer Rotwein, der ebenfalls sehr gut zu Wild, dunklem Fleisch, Braten oder Käse passt.
 
-### Rebsorten:
-
+### Rebsorten
 60 – 80 % Merlot, Sessa Cavezze\
 20 – 40 % Cabernet-Sauvignon, Sessa Roncho
 
-### Weinbeschreibung:
-
+### Weinbeschreibung
 Dunkles kräftiges Rubinrot\
 Aromatische, herb-würzige Nase, Fruchtaromen von Waldbeeren, schwarzen Johannisbeeren und leichten Holztönen\
 Würziger Geschmack, interessantes Spiel aus pfeffriger Frucht, schwarzer Schokolade und Brombeeren, kompakte Gerbstoffe, nachhaltiger, langer Abgang
 
-### Vinifikation:
-
+### Vinifikation
 6 Monate Stahltank, 12 bis 24 Monate Barrique franz. Eiche und Kastanie
 
-### Trinken:
-
+### Trinken
 Heute dekantieren oder 2 Stunden vorher öffnen\
 Optimale Reife 2 bis 6 Jahre nach der Abfüllung
