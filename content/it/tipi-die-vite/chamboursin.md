@@ -3,7 +3,6 @@ title: "Chambourcin"
 date: "2017-08-27T19:06:02+02:00"
 translationKey: "rebsorten/chamboursin"
 weight: 6
-image: "/images/2017/08/WP_20161008_10_36_22_Richklein.jpg"
 ---
 La vite Chambourcin è stata coltivata dal francese biochimico Johannes Seyve. La vite genitrice sono Seyve Villard 12-417 e Chancellor. Dalla Chambourcin e dalla Diana (una coltivazione da Müller-Thurgau e Sylvaner) è stata coltivata la vite PIWI Reggente.\
 Anche se sorta in Francia nel 1963, la Chambourcin verrà piantata prevalentemente negli USA, a sud-est degli Stati. Inoltre è presente anche in Australia e in Portogallo.\

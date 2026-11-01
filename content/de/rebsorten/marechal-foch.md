@@ -3,7 +3,7 @@ title: "Maréchal Foch"
 date: "2017-05-27T15:02:23+02:00"
 translationKey: "rebsorten/marechal-foch"
 weight: 5
-image: "/images/2017/05/WP_20160926_15_05_52_Rich-e1496433830248.jpg"
+image: "/images/2017/08/WP_20160926_15_05_52_Richklein.jpg"
 ---
 Maréchal Foch wurde zu Beginn des 20. Jahrhunderts durch den Franzosen Eugène Kuhlmann (1858–1932) im Elsass gezüchtet und zu Ehren von Ferdinand Foch (1851–1929) benannt. Maréchal Foch ist eine Kreuzung zwischen **(Vitis riparia x Vitis rupestris)** x **Goldriesling**.\
 Maréchal Foch war früher an der Loire weit verbreitet, heute sind dort nur noch gut 100 Hektaren bestockt. Neben der Schweiz wird sie im Staate New York und in Michigan, Kalifornien und in Kanada kultiviert.\

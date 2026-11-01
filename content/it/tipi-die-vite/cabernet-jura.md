@@ -3,7 +3,6 @@ title: "Cabernet Jura"
 date: "2017-08-27T18:54:11+02:00"
 translationKey: "rebsorten/cabernet-jura"
 weight: 4
-image: "/images/2017/08/WP_20170826_17_57_05_Pro.jpg"
 ---
 La vite Cabernet Jura è una vite interspecifica. È stata coltivata da Valentin Blattner. Una parte genitrice è la vite Cabernet Sauvignon, la seconda parte (con le radici americane) non è conosciuta. Praticamente è resistente contro le tre importanti malattie di funghi (oidium, peronospora e botrytis).\
 La Cabernet Jura è coltivata solo in Svizzera, recentemente è conosciuta anche in Germania e in Austria.\

@@ -3,7 +3,6 @@ title: "Borghirolo"
 date: "2017-06-05T14:22:37+02:00"
 translationKey: "die-boden/borghirolo"
 weight: 15
-image: "/images/2017/06/WP_20170827_11_25_37_Proklein.jpg"
 ---
 Circa 8.000 mq, Gewürztraminer (2008), Completer (2009 e 2014) e Sauvignon Blanc (2014)
 

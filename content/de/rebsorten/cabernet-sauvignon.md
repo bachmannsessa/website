@@ -3,7 +3,7 @@ title: "Cabernet-Sauvignon"
 date: "2016-01-02T18:38:53+01:00"
 translationKey: "rebsorten/cabernet-sauvignon"
 weight: 3
-image: "/images/2024/03/WP_20170827_11_29_24_Pro-1153x2048.jpg"
+image: "/images/2016/01/Cabernet-Sauvignon.jpg"
 ---
 Rund 200‘000 der 8 Mio. Hektaren Rebfläche weltweit sind mit Cabernet-Sauvignon-Reben bepflanzt. In der Schweiz sind es etwa 65 Hektaren, vor allem in den drei Kantonen Wallis, Genf und Tessin. In unserem Rebgut ist die beste Lage im Roncho mit rund 600 Rebstöcken dieser Sorte bepflanzt.
 
