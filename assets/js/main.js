@@ -39,7 +39,10 @@ function orderSummary(form) {
     total += q * p; bottles += q;
     lines.push(`${q} × ${i.dataset.wine} (${i.dataset.volume}) à ${chf(p)} = ${chf(q * p)}`);
   });
-  return { lines, total, bottles };
+  // Porto: pro angefangenen 6er-Karton
+  const boxes = Math.ceil(bottles / 6), missing = boxes * 6 - bottles;
+  const shipping = boxes * (parseFloat(form.dataset.shipping) || 0);
+  return { lines, total, bottles, boxes, missing, shipping, grand: total + shipping };
 }
 // Warenkorb ("Bestellung"): { weinId: Anzahl } im Browser gespeichert (localStorage)
 const cart = {
@@ -96,11 +99,14 @@ document.querySelectorAll('form[data-order]').forEach((form) => {
 
   const update = () => {
     const s = orderSummary(form);
-    form.querySelector('[data-total]').textContent = chf(s.total);
+    form.querySelector('[data-wine-total]').textContent = chf(s.total);
+    form.querySelector('[data-shipping-total]').textContent = chf(s.shipping);
+    form.querySelector('[data-total]').textContent = chf(s.grand);
+    form.querySelector('[data-clear]').hidden = !s.bottles;
     form.querySelector('[data-bottles]').textContent = s.bottles;
     form.querySelector('[data-bottles-label]').textContent = s.bottles === 1 ? form.dataset.bottleOne : form.dataset.bottleOther;
     // Kartons à 6 Flaschen; Hinweis, wenn der letzte Karton nicht voll ist
-    const boxes = Math.ceil(s.bottles / 6), missing = boxes * 6 - s.bottles;
+    const { boxes, missing } = s;
     form.querySelector('[data-boxes]').textContent = boxes;
     form.querySelector('[data-boxes-label]').textContent = boxes === 1 ? form.dataset.boxOne : form.dataset.boxOther;
     const warn = form.querySelector('[data-box-warn]');
@@ -113,6 +119,12 @@ document.querySelectorAll('form[data-order]').forEach((form) => {
     inputs.forEach((i) => { const q = Math.max(0, parseInt(i.value, 10) || 0); if (q) next[i.dataset.id] = q; });
     cart.set(next);
     update();
+  });
+  // "Bestellung leeren"
+  form.querySelector('[data-clear]').addEventListener('click', (e) => {
+    if (!window.confirm(e.currentTarget.dataset.confirm)) return;
+    inputs.forEach((i) => { i.value = ''; });
+    form.dispatchEvent(new Event('input'));
   });
   // − / + / "+ 1 Karton"
   form.addEventListener('click', (e) => {
@@ -136,10 +148,8 @@ document.querySelectorAll('form[data-ajax]').forEach((form) => {
       const s = orderSummary(form);
       if (!s.bottles) { show(form.dataset.msgEmpty, false); return; }
       form.elements['Bestellung'].value = s.lines.join('\n');
-      const boxes = Math.ceil(s.bottles / 6), missing = boxes * 6 - s.bottles;
-      form.elements['Total'].value = `${chf(s.total)} (${s.bottles} Flaschen = ${boxes} Karton${boxes === 1 ? '' : 's'}`
-        + (missing ? `, letzter Karton nicht voll: ${6 - missing} von 6` : '')
-        + `; zzgl. Porto CHF ${form.dataset.shipping}/6er-Karton bei Versand)`;
+      form.elements['Total'].value = `Wein ${chf(s.total)} + Porto ${chf(s.shipping)} (${s.boxes} Karton${s.boxes === 1 ? '' : 's'} à CHF ${form.dataset.shipping}) = ${chf(s.grand)}`
+        + ` | ${s.bottles} Flaschen` + (s.missing ? `, letzter Karton nicht voll: ${6 - s.missing} von 6` : '');
     }
     const btn = form.querySelector('[type=submit]');
     btn.disabled = true; show(form.dataset.msgSending, true);

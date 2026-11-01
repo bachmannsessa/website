@@ -44,9 +44,16 @@
   {{- end }}
 
   <div class="order__total">
-    <span>{{ T "total" }}: <strong data-total>CHF 0.00</strong> (<span data-bottles>0</span> <span data-bottles-label>{{ T "bottles" }}</span> · <span data-boxes>0</span> <span data-boxes-label>{{ T "boxOther" }}</span>)</span>
+    <div class="order__sums">
+      <span>{{ T "wine" }} <b data-wine-total>CHF 0.00</b></span>
+      <span>+ {{ T "shipping" }} <b data-shipping-total>CHF 0.00</b> <small>(<span data-boxes>0</span> <span data-boxes-label>{{ T "boxOther" }}</span> à CHF {{ $d.versand_pro_karton }})</small></span>
+      <span class="order__grand">= {{ T "total" }} <strong data-total>CHF 0.00</strong></span>
+    </div>
     <small class="order__box-warn" data-box-warn hidden></small>
-    <small>{{ T "shippingNote" (dict "amount" $d.versand_pro_karton) }}</small>
+    <div class="order__total-foot">
+      <small><span data-bottles>0</span> <span data-bottles-label>{{ T "bottles" }}</span><span class="info"> · {{ T "shippingInfo" }}</span></small>
+      <button type="button" class="order__clear" data-clear data-confirm="{{ T "clearConfirm" }}" hidden>{{ T "clearCart" }}</button>
+    </div>
   </div>
 
   <fieldset>
