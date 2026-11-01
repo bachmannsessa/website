@@ -22,8 +22,4 @@ ca. 6 Monate Stahltank
 
 ### Trinken
 
-Ein Sommertraum, als Apéro im Garten oder auf der Terrasse, mit seiner jungen und wilden Frische. Nach einem oder zwei Jahren etwas breiter, die Aromen sind noch intensiver, der Wein ist vornehmer und edler.
-
-### Trinken
-
-Kann sofort und kühl (8 ° C) getrunken werden.
+Ein Sommertraum, als Apéro im Garten oder auf der Terrasse, mit seiner jungen und wilden Frische. Nach einem oder zwei Jahren etwas breiter, die Aromen sind noch intensiver, der Wein ist vornehmer und edler. Kann sofort und kühl (8 °C) getrunken werden.
