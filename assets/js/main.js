@@ -179,3 +179,50 @@ if ('IntersectionObserver' in window && reveals.length) {
 } else {
   reveals.forEach((el) => el.classList.add('is-visible'));
 }
+
+// Fotos im Kopfbereich der Startseite: horizontal wechselnd, Endlosschleife
+document.querySelectorAll('[data-slides]').forEach((root) => {
+  const track = root.querySelector('.hero__track');
+  const slides = [...track.children];
+  const n = slides.length;
+  if (n < 2) return;
+  const hero = root.closest('.hero') || root;
+  const dots = [...hero.querySelectorAll('.hero__dots [data-goto]')];
+  const clone = slides[0].cloneNode(true);           // Kopie des ersten Fotos für den nahtlosen Übergang
+  clone.setAttribute('aria-hidden', 'true');
+  track.appendChild(clone);
+  const interval = (parseFloat(root.dataset.interval) || 6) * 1000;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0, timer = null;
+
+  const go = (k, animate = true) => {
+    i = k;
+    track.style.transition = animate ? '' : 'none';
+    track.style.transform = `translateX(${-i * 100}%)`;
+    const cur = i % n;
+    slides.forEach((s, j) => s.toggleAttribute('aria-hidden', j !== cur));
+    dots.forEach((d, j) => (j === cur ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+  };
+  track.addEventListener('transitionend', () => { if (i === n) { go(0, false); void track.offsetWidth; } });
+  const stop = () => { clearInterval(timer); timer = null; };
+  const start = () => { stop(); if (!reduce && !document.hidden) timer = setInterval(() => go(i + 1), interval); };
+
+  dots.forEach((d) => d.addEventListener('click', () => { go(parseInt(d.dataset.goto, 10)); start(); }));
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+
+  // Wischen auf Touch-Geräten
+  let x0 = null;
+  hero.addEventListener('pointerdown', (e) => { x0 = e.clientX; });
+  hero.addEventListener('pointerup', (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) < 50) return;
+    go(dx < 0 ? i + 1 : (i === 0 ? n - 1 : i - 1));
+    start();
+  });
+
+  // weitere Fotos erst laden, wenn die Seite fertig ist
+  const loadRest = () => track.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
+  if (document.readyState === 'complete') loadRest(); else window.addEventListener('load', loadRest);
+  start();
+});

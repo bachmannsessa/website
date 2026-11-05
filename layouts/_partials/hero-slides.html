@@ -1,0 +1,20 @@
+{{- /* Photo slideshow for the start page header.
+       Photos: front matter "heroImages" (list of {src, position}); a page without its own list
+       uses the one of its translation (German). Falls back to the single page photo. */ -}}
+{{- $slides := .Params.heroImages -}}
+{{- if not $slides }}{{ range .Translations }}{{ if and (not $slides) .Params.heroImages }}{{ $slides = .Params.heroImages }}{{ end }}{{ end }}{{ end -}}
+{{- if not $slides }}{{ $i := partial "page-image.html" . }}{{ $slides = slice (dict "src" $i.src "position" $i.position) }}{{ end -}}
+<div class="hero__slides" data-slides data-interval="{{ .Params.heroInterval | default 6 }}">
+  <div class="hero__track">
+    {{- range $n, $s := $slides }}
+    <div class="hero__slide"{{ if $n }} aria-hidden="true"{{ end }}>
+      {{ partial "picture.html" (dict "src" $s.src "position" $s.position "sizes" "100vw" "class" "hero__img" "loading" (cond (eq $n 0) "eager" "lazy")) }}
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- if gt (len $slides) 1 }}
+<div class="hero__dots" role="group" aria-label="{{ T "photos" }}">
+  {{- range $n, $s := $slides }}<button type="button" data-goto="{{ $n }}" aria-label="{{ T "photo" }} {{ add $n 1 }}"{{ if eq $n 0 }} aria-current="true"{{ end }}></button>{{ end }}
+</div>
+{{- end }}

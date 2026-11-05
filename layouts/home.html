@@ -5,7 +5,7 @@
 
 {{- /* 1 ─ Hero */}}
 <header class="hero hero--large">
-  {{ $i := partial "page-image.html" . }}{{ partial "picture.html" (dict "src" $i.src "sizes" "100vw" "class" "hero__img" "loading" "eager" "position" $i.position) }}
+  {{ partial "hero-slides.html" . }}
   <div class="hero__text">
     <h1>{{ site.Title }}</h1>
     {{- with $p.tagline }}<p class="hero__sub">{{ . }}</p>{{ end }}
@@ -14,20 +14,17 @@
       {{- with $order }}<a class="btn btn--outline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
     </p>
   </div>
-  <a class="hero__scroll" href="#winzer" aria-label="Scroll"></a>
+  <a class="hero__scroll" href="#willkommen" aria-label="Scroll"></a>
 </header>
 
-{{- /* 2 ─ Der Winzer */}}
-{{- with partial "page-by-key.html" "geschichte/der-winzer" }}
-<section class="sec" id="winzer">
-  <div class="sec__inner split">
-    <div class="split__media reveal">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 560px" "position" (partial "page-image.html" .).position) }}</div>
-    <div class="split__text reveal">
-      <p class="eyebrow">{{ .Title }}</p>
-      <h2>{{ $p.winzerTitle | default .Title }}</h2>
-      <p class="lead">{{ partial "lead.html" . }}</p>
-      <a class="link-arrow" href="{{ .Parent.RelPermalink }}#winzer">{{ T "moreAbout" }}</a>
-    </div>
+{{- /* 2 ─ Willkommen */}}
+{{- with $p.welcome }}
+<section class="sec welcome" id="willkommen">
+  <div class="sec__inner welcome__inner reveal">
+    {{- with .eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    {{- with .title }}<h2>{{ . }}</h2>{{ end }}
+    {{- with .text }}<div class="welcome__text">{{ . | markdownify }}</div>{{ end }}
+    {{- with .signature }}<p class="welcome__sig">{{ . }}</p>{{ end }}
   </div>
 </section>
 {{- end }}
@@ -87,6 +84,21 @@
   <div class="band__text reveal">
     {{- with $p.quote }}<blockquote>{{ . }}</blockquote>{{ end }}
     <a class="btn btn--light" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </div>
+</section>
+{{- end }}
+
+{{- /* 6b ─ Der Winzer */}}
+{{- with partial "page-by-key.html" "geschichte/der-winzer" }}
+<section class="sec" id="winzer">
+  <div class="sec__inner split">
+    <div class="split__media reveal">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 560px" "position" (partial "page-image.html" .).position) }}</div>
+    <div class="split__text reveal">
+      <p class="eyebrow">{{ .Title }}</p>
+      <h2>{{ $p.winzerTitle | default .Title }}</h2>
+      <p class="lead">{{ partial "lead.html" . }}</p>
+      <a class="link-arrow" href="{{ .Parent.RelPermalink }}#winzer">{{ T "moreAbout" }}</a>
+    </div>
   </div>
 </section>
 {{- end }}

@@ -56,8 +56,12 @@ Legal page texts (draft, not legal advice – have them checked):
 Every page sets its photo in the front matter: `image: "/images/…"` (file in `assets/images/…`),
 optionally `imagePosition: "50% 30%"` as focus point for crops.
 Italian pages without their own `image` automatically use the photo (and focus point) of their
-German translation – so normally set it only in the German file. The start page photo is in
-`content/de/_index.md`.
+German translation – so normally set it only in the German file.
+
+Start page header: a slideshow defined in `content/de/_index.md` → `heroImages` (list of `src` and
+optional `position`, in display order; `heroInterval` = seconds per photo). The Italian start page
+uses the same list unless it defines its own. The welcome text below the photos is `welcome`
+(eyebrow, title, text, signature) in `content/de/_index.md` and `content/it/_index.md`.
 
 ## Web editor (Sveltia CMS) – for writing news
 
