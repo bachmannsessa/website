@@ -303,7 +303,7 @@ h4 { font-size: 1.05rem; }
 /* wines */
 .wines { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .wine { display: flex; flex-direction: column; background: #2a2724; border-radius: var(--radius); overflow: hidden; color: inherit; text-decoration: none; transition: transform .25s, background .25s; }
-.wine:hover { transform: translateY(-4px); background: #34302c; }
+@media (hover: hover) { .wine:hover { transform: translateY(-4px); background: #34302c; } }
 .wine__img img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .wine__body { padding: 16px 18px 20px; display: flex; flex-direction: column; flex: 1; }
 .wine h3 { margin: 0 0 6px; font-size: 1.25rem; color: #fff; }
@@ -312,7 +312,7 @@ h4 { font-size: 1.05rem; }
 .wine__price small { font-weight: 400; color: #a79f95; }
 @media (max-width: 960px) { .wines { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 700px) {
-  .wines { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); gap: 14px; margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 12px; scrollbar-width: none; }
+  .wines { display: flex; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); gap: 14px; margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) 12px; scrollbar-width: none; }
   .wines::-webkit-scrollbar { display: none; }
   .wine { flex: 0 0 68%; scroll-snap-align: start; }
 }
@@ -378,7 +378,7 @@ h4 { font-size: 1.05rem; }
 .wine-others__row { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 14px; }
 .wine-other { text-decoration: none; color: var(--ink); text-align: center; font-size: .9rem; font-weight: 600; }
 .wine-other img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; margin-bottom: 8px; transition: transform .25s; }
-.wine-other:hover img { transform: translateY(-3px); }
+@media (hover: hover) { .wine-other:hover img { transform: translateY(-3px); } }
 
 @media (max-width: 800px) {
   .wine-hero__inner { grid-template-columns: 1fr; }
@@ -552,3 +552,9 @@ section ~ .post__body, .hero + .post__body { padding-top: clamp(40px, 6vw, 72px)
 .welcome h2 { margin: 0 0 24px; font-size: clamp(2rem, 4.5vw, 3rem); }
 .welcome__text p { font-size: 1.18rem; line-height: 1.8; margin: 0 0 1em; }
 .welcome__sig { margin: 28px 0 0; font: italic 400 1.35rem var(--serif); color: var(--accent-2); }
+
+/* horizontal scroll rows on phones: no vertical movement (fade-in only, no hover lift) */
+@media (max-width: 800px) {
+  .js .wines .reveal, .js .wine-others__row .reveal { transform: none; }
+  .wine-others__row { overflow-y: hidden; overscroll-behavior-x: contain; }
+}
