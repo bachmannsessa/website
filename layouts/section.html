@@ -15,7 +15,7 @@
   {{- /* merged sub pages (e.g. "der Winzer"), shown in full */}}
   {{- range .RegularPages.ByWeight }}
   {{- $w := partial "page-image.html" . }}
-  <section class="story" id="{{ cond (eq .TranslationKey "geschichte/der-winzer") "winzer" (.File.ContentBaseName) }}">
+  <section class="story" id="{{ cond (eq .TranslationKey "geschichte/winzer") "winzer" (.File.ContentBaseName) }}">
     <div class="story__inner">
       <div class="story__img">{{ partial "picture.html" (dict "src" $w.src "position" $w.position "sizes" "(max-width: 860px) 100vw, 440px" "alt" .Title) }}</div>
       <div class="story__text prose">
@@ -27,7 +27,7 @@
   </section>
   {{- end }}
 
-{{- else if eq $key "die-weine" }}
+{{- else if eq $key "weine" }}
   <section class="sec sec--tint sec--cards" id="weine">
     <div class="sec__inner">
       {{ partial "wine-grid.html" . }}

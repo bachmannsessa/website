@@ -15,7 +15,7 @@
   <fieldset class="order__group">
     <legend>{{ index .titel $lang }}</legend>
     {{- range .weine }}
-    {{- $page := partial "page-by-key.html" (printf "die-weine/%s" .id) }}
+    {{- $page := partial "page-by-key.html" (printf "weine/%s" .id) }}
     {{- $img := .bild }}{{ with $page }}{{ $img = (partial "page-image.html" .).src }}{{ end }}
     <div class="order__row{{ if .ausverkauft }} is-soldout{{ end }}">
       <div class="order__thumb">

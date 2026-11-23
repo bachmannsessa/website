@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- if strings.HasPrefix .TranslationKey "die-weine/" }}
+{{- if strings.HasPrefix .TranslationKey "weine/" }}
 {{ partial "wine-page.html" . }}
 {{- else if eq .TranslationKey "kontakt" }}
 {{ partial "contact-page.html" . }}

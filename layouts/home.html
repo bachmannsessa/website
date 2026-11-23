@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- $p := .Params }}
 {{- $order := partial "page-by-key.html" "bestellung" }}
-{{- $weine := partial "page-by-key.html" "die-weine" }}
+{{- $weine := partial "page-by-key.html" "weine" }}
 
 {{- /* 1 ─ Hero */}}
 <header class="hero hero--large">
@@ -30,7 +30,7 @@
 {{- end }}
 
 {{- /* 3 ─ Zahlen */}}
-{{- $boden := partial "page-by-key.html" "die-boden" }}
+{{- $boden := partial "page-by-key.html" "boden" }}
 {{- $reben := partial "page-by-key.html" "rebsorten" }}
 <section class="facts">
   <div class="sec__inner facts__grid">
@@ -89,7 +89,7 @@
 {{- end }}
 
 {{- /* 6b ─ Der Winzer */}}
-{{- with partial "page-by-key.html" "geschichte/der-winzer" }}
+{{- with partial "page-by-key.html" "geschichte/winzer" }}
 <section class="sec" id="winzer">
   <div class="sec__inner split">
     <div class="split__media reveal">{{ partial "picture.html" (dict "src" (partial "page-image.html" .).src "sizes" "(max-width: 800px) 100vw, 560px" "position" (partial "page-image.html" .).position) }}</div>

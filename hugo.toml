@@ -79,11 +79,11 @@ timeZone = "Europe/Zurich"
       weight = 40
     [[languages.de.menus.main]]
       name = "Böden"
-      pageRef = "/die-boden"
+      pageRef = "/boden"
       weight = 50
     [[languages.de.menus.main]]
       name = "Weine"
-      pageRef = "/die-weine"
+      pageRef = "/weine"
       weight = 60
     [[languages.de.menus.main]]
       name = "Kontakt"
@@ -109,15 +109,15 @@ timeZone = "Europe/Zurich"
       weight = 30
     [[languages.it.menus.main]]
       name = "Tipi di vite"
-      pageRef = "/tipi-die-vite"
+      pageRef = "/tipi-di-vite"
       weight = 40
     [[languages.it.menus.main]]
-      name = "Il terreno"
-      pageRef = "/il-terreno"
+      name = "Terreno"
+      pageRef = "/terreno"
       weight = 50
     [[languages.it.menus.main]]
-      name = "I vini"
-      pageRef = "/i-vini"
+      name = "Vini"
+      pageRef = "/vini"
       weight = 60
     [[languages.it.menus.main]]
       name = "Contatto"
